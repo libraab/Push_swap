@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 11:53:42 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/04/02 11:32:50 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/13 17:52:21 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static	int	ft_isneg(int x)
 {
@@ -28,6 +29,7 @@ int	ft_atoi(const char *str)
 	a = 0;
 	b = 1;
 	i = 0;
+	
 	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\f'
 		|| str[i] == '\v' || str[i] == '\t' || str[i] == '\r')
 		i++;
@@ -46,11 +48,3 @@ int	ft_atoi(const char *str)
 	}
 	return (a * b);
 }
-/*#include <stdlib.h>
-#include <stdio.h>
-int main()
-{
-	 char a[] = "1844674407375";
-	 printf("%d\n", ft_atoi(a));
-	 printf("%d\n\n", atoi(a));
- }*/

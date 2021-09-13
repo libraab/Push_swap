@@ -6,7 +6,7 @@
 #    By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/13 09:31:21 by abouhlel          #+#    #+#              #
-#    Updated: 2021/09/13 09:59:12 by abouhlel         ###   ########.fr        #
+#    Updated: 2021/09/13 18:32:26 by abouhlel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ all:		${NAME}
 
 %.o: %.c	$(HEADERS)
 			@printf $(yellow)
-			@printf "Generating so_long objects... %-33.33s\r" $@
+			@printf "Generating push_swap objects... %-33.33s\r" $@
 			@$(CC) -c $(CFLAGS) -o $@ $<
 			@printf $(reset)
 
