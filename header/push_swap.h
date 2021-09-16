@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:31:49 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/13 18:54:43 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/16 14:14:55 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ typedef struct s_data
 int		ft_error(int x);
 int		ft_parsing(char *str);
 int		ft_parsing2(char **str, int x);
+int		ft_arg_count(char *str, char sp);
 
 #endif
