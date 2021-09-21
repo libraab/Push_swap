@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:30:26 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/16 14:26:41 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/21 17:48:22 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_arg_count(char *str, char sp)
 	return (nb_count);
 }
 
-int ft_parsing(char *str)
+int ft_parsing(char *str)//for ac == 2
 {
 	int		i;
 	int		tab_len;
@@ -37,22 +37,29 @@ int ft_parsing(char *str)
 	i = 0;
 	nb = malloc(sizeof (t_data));
 	tab_len = ft_arg_count(str, ' ');
+	if (tab_len == 1)
+		return (ft_error(3));
 	nb->tab = malloc(sizeof(int) * tab_len + 1);
 	nb->set = ft_split(str, ' ');
+	if (!ft_check_limits(nb, tab_len))
+		return(ft_error(5));
 	while (i < tab_len)
 	{
 		nb->tab[i] = ft_atoi(nb->set[i]);
 		i++;
 	}
 	nb->tab[i] = '\0';
-	ft_check_double()
-	// printf("total numbers %d\n", tab_len);
-	// for (int i = 0; i < tab_len; i++)
-	// 	printf("the nb are %d\n", nb->tab[i]);
+	if (!ft_check_double(nb, tab_len))
+		return (ft_error(2));
+	if (!ft_check_ifsorted(nb, tab_len))
+		return (ft_error(4));
+	printf("total %d\n", tab_len);
+	for (int i = 0; i < tab_len; i++)
+		printf("the nb are %d\n", nb->tab[i]);
 	return (1);
 }
 
-int ft_parsing2(char **str, int ac)
+int ft_parsing2(char **str, int ac)//for ac > 2
 {
 	int		i;
 	int		j;
