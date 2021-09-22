@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:30:26 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/21 17:48:22 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/22 10:07:53 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_arg_count(char *str, char sp)
 	return (nb_count);
 }
 
-int ft_parsing(char *str)//for ac == 2
+int	ft_parsing(char *str)
 {
 	int		i;
 	int		tab_len;
@@ -42,7 +42,7 @@ int ft_parsing(char *str)//for ac == 2
 	nb->tab = malloc(sizeof(int) * tab_len + 1);
 	nb->set = ft_split(str, ' ');
 	if (!ft_check_limits(nb, tab_len))
-		return(ft_error(5));
+		return (ft_error(5));
 	while (i < tab_len)
 	{
 		nb->tab[i] = ft_atoi(nb->set[i]);
@@ -53,13 +53,10 @@ int ft_parsing(char *str)//for ac == 2
 		return (ft_error(2));
 	if (!ft_check_ifsorted(nb, tab_len))
 		return (ft_error(4));
-	printf("total %d\n", tab_len);
-	for (int i = 0; i < tab_len; i++)
-		printf("the nb are %d\n", nb->tab[i]);
 	return (1);
 }
 
-int ft_parsing2(char **str, int ac)//for ac > 2
+int	ft_parsing2(char **str, int ac)
 {
 	int		i;
 	int		j;
@@ -67,7 +64,7 @@ int ft_parsing2(char **str, int ac)//for ac > 2
 
 	i = 0;
 	j = 0;
-	nb = malloc(sizeof (t_data));//<--------search this (Tom's way to secure the struct)
+	nb = malloc(sizeof (t_data));
 	nb->tab = malloc(sizeof(int) * ac);
 	while (str[i + 1])
 	{
@@ -75,8 +72,5 @@ int ft_parsing2(char **str, int ac)//for ac > 2
 		i++;
 	}
 	nb->tot = ac - 1;
-	// for (int i = 0; i < nb->tot; i++)
-	// 	printf("the numbers are %d\n", nb->tab[i]);
-	// printf("total nb %d\n", nb->tot);
 	return (1);
 }

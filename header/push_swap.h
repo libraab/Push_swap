@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:31:49 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/21 17:47:11 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/22 08:31:17 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,7 @@ int		ft_arg_count(char *str, char sp);
 int		ft_check_double(t_data *nb, int nb_count);
 int		ft_check_ifsorted(t_data *nb, int nb_count);
 int		ft_check_limits(t_data *nb, int tab_len);
+bool    ft_is_valid(char *str);
+bool    ft_is_valid2(char *str);
 
 #endif
