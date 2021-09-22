@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 11:53:42 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/21 17:49:32 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/22 15:04:38 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	ft_atoi(const char *str)
 	a = 0;
 	b = 1;
 	i = 0;
-	
 	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\f'
 		|| str[i] == '\v' || str[i] == '\t' || str[i] == '\r')
 		i++;
@@ -58,7 +57,6 @@ long long int	ft_atoi2(const char *str)
 	a = 0;
 	b = 1;
 	i = 0;
-	
 	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\f'
 		|| str[i] == '\v' || str[i] == '\t' || str[i] == '\r')
 		i++;
