@@ -6,44 +6,26 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 12:12:30 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/22 10:16:12 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/24 12:06:06 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-bool	ft_is_valid(char *str)
+int	ft_arg_count(char *str, char sp)
 {
-	int	i;
+	int		i;
+	int		nb_count;
 
-	i = 0;
-	if (ft_strlen(str) == 1 && ft_isdigit(str[0]) == false)
-		return (false);
-	if ((str[i] != '-' && str[i] != '+') && ft_isdigit(str[i]) == false)
-		return (false);
-	i++;
-	while (str[i])
-	{
-		if (ft_isdigit(str[i]) == false)
-			return (false);
-		i++;
-	}
-	return (true);
-}
-
-bool	ft_is_valid2(char *str)
-{
-	int	i;
-
+	nb_count = 0;
 	i = 0;
 	while (str[i])
 	{
-		if (ft_isdigit(str[i]) == false && (str[i] == '-' || str[i] == '+')
-			&& (str[i - 1] != ' ' || ft_isdigit(str[i + 1]) == false))
-			return (false);
+		if (str[i] != sp && (str[i + 1] == sp || str[i + 1] == '\0'))
+			nb_count++;
 		i++;
 	}
-	return (true);
+	return (nb_count);
 }
 
 int	main(int argc, char **argv)
@@ -55,7 +37,7 @@ int	main(int argc, char **argv)
 		return (ft_error(0));
 	if (argc == 2)
 	{
-		if (ft_is_valid2(argv[1]) == false)
+		if (ft_valid_nbrs(argv[1]) == false)
 			return (ft_error(1));
 		ft_parsing(argv[1]);
 	}
@@ -64,7 +46,7 @@ int	main(int argc, char **argv)
 	{
 		while (argv[i])
 		{
-			if (ft_is_valid(argv[i]) == false)
+			if (ft_valid_nbrs2(argv[i]) == false)
 				return (ft_error(1));
 			i++;
 		}

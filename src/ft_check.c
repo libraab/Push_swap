@@ -1,16 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_double.c                                  :+:      :+:    :+:   */
+/*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 14:27:46 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/22 10:11:40 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/24 12:05:40 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
+
+bool	ft_valid_nbrs(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (ft_strlen(str) == 1 && ft_isdigit(str[0]) == false)
+		return (false);
+	if ((str[i] != '-' && str[i] != '+') && ft_isdigit(str[i]) == false)
+		return (false);
+	i++;
+	while (str[i])
+	{
+		if (ft_isdigit(str[i]) == false)
+			return (false);
+		i++;
+	}
+	return (true);
+}
+
+bool	ft_valid_nbrs2(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (ft_isdigit(str[i]) == false && (str[i] == '-' || str[i] == '+')
+			&& (str[i - 1] != ' ' || ft_isdigit(str[i + 1]) == false))
+			return (false);
+		i++;
+	}
+	return (true);
+}
 
 int	ft_check_double(t_data *nb, int nb_count)
 {

@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:50:56 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/22 10:12:55 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/24 11:44:35 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_error(int x)
 	if (x == 2)
 		write(2, "Error!\nThere is a duplicated nb\n", 32);
 	if (x == 3)
-		write(2, "Error!\nThere is only one nb\n", 28);
+		write(2, "Error!\nThere is only one argument\n", 34);
 	if (x == 4)
 		write(2, "Error!\nNumbers are already sorted\n", 34);
 	if (x == 5)
