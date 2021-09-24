@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 14:27:46 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/24 12:05:40 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/24 19:44:44 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ int	ft_check_limits(t_data *nb, int tab_len)
 	i = 0;
 	while (i < tab_len)
 	{
+		printf("in\n");
 		if (ft_atoi2(nb->set[i]) > MAX || ft_atoi2(nb->set[i]) < MIN)
 			return (0);
 		i++;

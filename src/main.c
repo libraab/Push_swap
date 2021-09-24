@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 12:12:30 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/24 12:06:06 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/24 18:54:04 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,10 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		if (ft_valid_nbrs(argv[1]) == false)
+		{
+			printf("%s\n", argv[1]);
 			return (ft_error(1));
+		}
 		ft_parsing(argv[1]);
 	}
 	i = 1;
