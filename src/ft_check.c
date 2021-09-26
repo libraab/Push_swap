@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 14:27:46 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/24 19:44:44 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/26 16:08:33 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,16 @@ bool	ft_valid_nbrs(char *str)
 	int	i;
 
 	i = 0;
-	if (ft_strlen(str) == 1 && ft_isdigit(str[0]) == false)
-		return (false);
-	if ((str[i] != '-' && str[i] != '+') && ft_isdigit(str[i]) == false)
-		return (false);
-	i++;
 	while (str[i])
 	{
+		while (str[i] == ' ' && str[i])
+			i++;
+		if (str[i] == '\0')
+			return (true);
+		if (ft_isdigit(str[i]) == false && (str[i] != '-' && str[i] != '+' && str[i] != ' '))
+			return (false);
+		if (str[i] == '-' || str[i] == '+')	
+			i++;
 		if (ft_isdigit(str[i]) == false)
 			return (false);
 		i++;
@@ -35,13 +38,13 @@ bool	ft_valid_nbrs2(char *str)
 {
 	int	i;
 
-	i = 0;
-	while (str[i])
+	i = -1;
+	while (str[++i])
 	{
-		if (ft_isdigit(str[i]) == false && (str[i] == '-' || str[i] == '+')
-			&& (str[i - 1] != ' ' || ft_isdigit(str[i + 1]) == false))
+		if (ft_isdigit(str[i]) == false && str[i] != 43 && str[i] != 45)
 			return (false);
-		i++;
+		if ((str[i] == '-' || str[i] == '+') && (ft_isdigit(str[i + 1]) == false || i != 0))
+			return (false);
 	}
 	return (true);
 }
@@ -91,10 +94,16 @@ int	ft_check_limits(t_data *nb, int tab_len)
 	i = 0;
 	while (i < tab_len)
 	{
-		printf("in\n");
 		if (ft_atoi2(nb->set[i]) > MAX || ft_atoi2(nb->set[i]) < MIN)
 			return (0);
 		i++;
 	}
+	return (1);
+}
+
+int	ft_check_limits2(char *str)
+{
+	if (ft_atoi2(str) > MAX || ft_atoi2(str) < MIN)
+		return (0);
 	return (1);
 }

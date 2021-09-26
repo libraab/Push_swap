@@ -6,20 +6,18 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:30:26 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/24 12:07:02 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/26 11:22:20 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-int	ft_parsing(char *str)
+int	ft_parsing(t_data *nb, char *str)//parsing with " "
 {
 	int		i;
 	int		tab_len;
-	t_data	*nb;
 
 	i = 0;
-	nb = malloc(sizeof (t_data));
 	tab_len = ft_arg_count(str, ' ');
 	if (tab_len == 1)
 		return (ft_error(3));
@@ -29,8 +27,8 @@ int	ft_parsing(char *str)
 		return (ft_error(5));
 	while (i < tab_len)
 	{
-		nb->tab[i] = ft_atoi(nb->set[i]);
-		i++;
+			nb->tab[i] = ft_atoi(nb->set[i]);
+			i++;
 	}
 	nb->tab[i] = '\0';
 	if (!ft_check_double(nb, tab_len))
@@ -42,15 +40,13 @@ int	ft_parsing(char *str)
 	return (1);
 }
 
-int	ft_parsing2(char **str, int ac)
+int	ft_parsing2(t_data *nb, char **str, int ac)
 {
 	int		i;
 	int		j;
-	t_data	*nb;
 
 	i = 0;
 	j = 0;
-	nb = malloc(sizeof (t_data));
 	nb->tot = ac - 1;
 	nb->tab = malloc(sizeof(int) * ac);
 	while (str[i + 1])
