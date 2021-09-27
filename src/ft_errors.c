@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:50:56 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/24 11:44:35 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/27 13:43:19 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_error(int x)
 	if (x == 1)
 		write(2, "Error!\nArguments must be digits\n", 31);
 	if (x == 2)
-		write(2, "Error!\nThere is a duplicated nb\n", 32);
+		write(2, "Error!\nThere is a duplicated number\n", 36);
 	if (x == 3)
 		write(2, "Error!\nThere is only one argument\n", 34);
 	if (x == 4)

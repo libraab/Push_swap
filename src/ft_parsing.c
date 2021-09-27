@@ -6,13 +6,13 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:30:26 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/26 11:22:20 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/26 17:09:07 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-int	ft_parsing(t_data *nb, char *str)//parsing with " "
+int	ft_parsing(t_data *nb, char *str)
 {
 	int		i;
 	int		tab_len;
@@ -35,8 +35,6 @@ int	ft_parsing(t_data *nb, char *str)//parsing with " "
 		return (ft_error(2));
 	if (!ft_check_ifsorted(nb, tab_len))
 		return (ft_error(4));
-	for (int i = 0; i < tab_len; i++)
-		printf("%d\n", nb->tab[i]);
 	return (1);
 }
 
@@ -58,7 +56,5 @@ int	ft_parsing2(t_data *nb, char **str, int ac)
 		return (ft_error(2));
 	if (!ft_check_ifsorted(nb, nb->tot))
 		return (ft_error(4));
-	while (nb->tot--)
-		printf("%d\n", nb->tab[j++]);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 14:27:46 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/26 16:08:33 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/27 13:47:47 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,12 @@ bool	ft_valid_nbrs(char *str)
 			return (true);
 		if (ft_isdigit(str[i]) == false && (str[i] != '-' && str[i] != '+' && str[i] != ' '))
 			return (false);
-		if (str[i] == '-' || str[i] == '+')	
+		if (str[i] == '-' || str[i] == '+')
+		{
+			if (i != 0 && (str[i - 1] != ' ' || ft_isdigit(str[i + 1]) == false))
+				return (false);
 			i++;
+		}
 		if (ft_isdigit(str[i]) == false)
 			return (false);
 		i++;

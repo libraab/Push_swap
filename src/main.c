@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 12:12:30 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/26 15:57:36 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/27 13:41:34 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,9 @@ int	ft_arg_count(char *str, char sp)
 int	main(int argc, char **argv)
 {
 	int		i;
-	t_ll	*list;
 	t_data	*nb;
 
 	i = 0;
-	list = malloc(sizeof (t_ll));
 	nb = malloc(sizeof (t_data));
 	if (argc < 2)
 		return (ft_error(0));
@@ -44,6 +42,10 @@ int	main(int argc, char **argv)
 		if (ft_valid_nbrs(argv[1]) == false)
 			return (ft_error(1));
 		ft_parsing(nb, argv[1]);
+
+		//printing
+		for (int i = 0; i < ft_arg_count(argv[1], ' '); i++)
+			printf("%d\n", nb->tab[i]);
 	}
 	i = 1;
 	if (argc > 2) 
@@ -57,5 +59,12 @@ int	main(int argc, char **argv)
 			i++;
 		}
 		ft_parsing2(nb, argv, argc);
+		
+		
+		
+		// i = 0;//            printing
+		// while (nb->tot--)
+		// 	printf("%d\n", nb->tab[i++]);
 	}
+	ft_solve(nb);
 }
