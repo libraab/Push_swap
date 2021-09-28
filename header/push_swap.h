@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:31:49 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/27 12:00:54 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/28 16:55:14 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,6 @@
 # define MAX 2147483647
 # define MIN -2147483648
 
-// typedef struct s_ll
-// {
-// 	int			nbr;
-// 	struct s_ll	*next;
-// }				t_ll;
-
 typedef struct s_stack
 {
 	int		val_max;
@@ -51,11 +45,11 @@ typedef struct s_data
 	char	**set;
 	int		value;
 	int		tot;
-	t_stack	a;
-	t_stack	b;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 }			t_data;
 
-int		ft_error(int x);
+int		ft_error(void);
 int		ft_parsing(t_data *nb, char *str);
 int		ft_parsing2(t_data *nb, char **str, int x);
 int		ft_arg_count(char *str, char sp);
@@ -65,7 +59,9 @@ int		ft_check_limits(t_data *nb, int tab_len);
 int		ft_check_limits2(char *str);
 bool	ft_valid_nbrs(char *str);
 bool	ft_valid_nbrs2(char *str);
-void    ft_solve(t_data *nb);
+void    ft_solve_3(t_data *nb);
+void    ft_solve_2(void);
+void    ft_solve_all(t_data *nb);
 void	ft_init_stack(t_stack *x, t_data *nb);
 
 #endif

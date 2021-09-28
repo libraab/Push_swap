@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 12:12:30 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/27 13:41:34 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/28 16:56:49 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ int	main(int argc, char **argv)
 	i = 0;
 	nb = malloc(sizeof (t_data));
 	if (argc < 2)
-		return (ft_error(0));
+		return (ft_error());
 	if (argc == 2)
 	{
 		if (ft_valid_nbrs(argv[1]) == false)
-			return (ft_error(1));
+			return (ft_error());
 		ft_parsing(nb, argv[1]);
 
 		//printing
@@ -53,18 +53,16 @@ int	main(int argc, char **argv)
 		while (argv[i])
 		{
 			if (ft_valid_nbrs2(argv[i]) == false)
-				return (ft_error(1));
+				return (ft_error());
 			if (ft_check_limits2(argv[i]) == 0)
-				return (ft_error(5));
+				return (ft_error());
 			i++;
 		}
 		ft_parsing2(nb, argv, argc);
 		
+		i = 0;//            printing
+		while (nb->tot--)
+			printf("%d\n", nb->tab[i++]);
 		
-		
-		// i = 0;//            printing
-		// while (nb->tot--)
-		// 	printf("%d\n", nb->tab[i++]);
 	}
-	ft_solve(nb);
 }

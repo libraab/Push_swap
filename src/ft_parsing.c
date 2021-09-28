@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:30:26 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/26 17:09:07 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/28 16:55:46 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ int	ft_parsing(t_data *nb, char *str)
 	i = 0;
 	tab_len = ft_arg_count(str, ' ');
 	if (tab_len == 1)
-		return (ft_error(3));
+		return (ft_error());
 	nb->tab = malloc(sizeof(int) * tab_len + 1);
 	nb->set = ft_split(str, ' ');
 	if (!ft_check_limits(nb, tab_len))
-		return (ft_error(5));
+		return (ft_error());
 	while (i < tab_len)
 	{
 			nb->tab[i] = ft_atoi(nb->set[i]);
@@ -32,13 +32,13 @@ int	ft_parsing(t_data *nb, char *str)
 	}
 	nb->tab[i] = '\0';
 	if (!ft_check_double(nb, tab_len))
-		return (ft_error(2));
+		return (ft_error());
 	if (!ft_check_ifsorted(nb, tab_len))
-		return (ft_error(4));
+		return (ft_error());
 	return (1);
 }
 
-int	ft_parsing2(t_data *nb, char **str, int ac)
+int	ft_parsing2(t_data *nb, char **str, int ac) //parsing for several arg
 {
 	int		i;
 	int		j;
@@ -53,8 +53,9 @@ int	ft_parsing2(t_data *nb, char **str, int ac)
 		i++;
 	}
 	if (!ft_check_double(nb, nb->tot))
-		return (ft_error(2));
+		return (ft_error());
 	if (!ft_check_ifsorted(nb, nb->tot))
-		return (ft_error(4));
+		return (ft_error());
+	ft_solve_all(nb);
 	return (1);
 }

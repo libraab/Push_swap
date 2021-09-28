@@ -6,7 +6,7 @@
 #    By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/13 09:31:21 by abouhlel          #+#    #+#              #
-#    Updated: 2021/09/26 17:53:27 by abouhlel         ###   ########.fr        #
+#    Updated: 2021/09/27 13:57:02 by abouhlel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRCS				= main.c \
 						ft_errors.c \
 						ft_check.c \
 						ft_solve.c \
+						
 
 SRC					= $(addprefix ${FOLDER},${SRCS})
 HEADERS				= $(addprefix ${FOLDER_HEADER},${HEADER_FILE})
