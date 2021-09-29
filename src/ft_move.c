@@ -6,21 +6,21 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 13:32:50 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/29 14:58:01 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/29 15:13:02 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-void    ft_pa(t_data *nb)
-{
-    printf("pa\n");
-}
+// void    ft_pa(t_data *nb)
+// {
+//     printf("pa\n");
+// }
 
-void    ft_pb(t_data *nb)
-{
-    printf("pb\n");
-}
+// void    ft_pb(t_data *nb)
+// {
+//     printf("pb\n");
+// }
 
 void    ft_sa(t_data *nb)
 {
@@ -52,7 +52,7 @@ void    ft_ra(t_data *nb)
     temp = 0;
     i = 0;
     temp = nb->stack_a->tab[0];
-    while (i < x - 1)
+    while (i < nb->tot - 1)
     {
         nb->stack_a->tab[i] = nb->stack_a->tab[i + 1];
         i++;

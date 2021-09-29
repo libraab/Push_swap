@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:31:49 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/29 14:59:26 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/29 15:29:01 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ typedef struct s_data
 
 int		ft_error(void);
 int		ft_parsing(t_data *nb, char *str);
-int		ft_parsing2(t_data *nb, char **str, int x);
+int		ft_parsing2(t_data *nb, char **str);
 int		ft_arg_count(char *str, char sp);
 int		ft_check_double(t_data *nb, int nb_count);
 int		ft_check_ifsorted(t_data *nb, int nb_count);
@@ -58,10 +58,10 @@ int		ft_check_limits(t_data *nb, int tab_len);
 int		ft_check_limits2(char *str);
 bool	ft_valid_nbrs(char *str);
 bool	ft_valid_nbrs2(char *str);
-void    ft_solve_3(t_data *nb);
-void    ft_solve_2(t_data *nb);
+int    ft_solve_3(t_data *nb);
+int    ft_solve_2(t_data *nb);
 void    ft_solve_all(t_data *nb);
-void    ft_solve_more(t_data *nb);
+int    ft_solve_more(t_data *nb);
 void	ft_init_val(t_data *nb);
 void    ft_pa(t_data *nb);
 void    ft_pb(t_data *nb);

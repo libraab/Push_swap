@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 12:12:30 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/29 12:19:11 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/29 15:32:39 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,10 @@ int	main(int argc, char **argv)
 		//***********************************
 		//printing the list after storing it
 		i = 0;
-		while (nb->tot--)
+		while (i < nb->tot)
 			printf("|   %d   ", nb->initial_tab[i++]);
 		//***********************************
+
 	}
 	
 	if (argc > 2) 
@@ -66,13 +67,13 @@ int	main(int argc, char **argv)
 				return (ft_error());
 			i++;
 		}
-		ft_parsing2(nb, argv, argc);
+		ft_parsing2(nb, argv);
 
 
 		//*******************************
 		//printing the list after storing it
 		i = 0;
-		while (nb->tot--)
+		while (i < nb->tot)
 			printf("|   %d   ", nb->initial_tab[i++]);
 		//*******************************
 	}

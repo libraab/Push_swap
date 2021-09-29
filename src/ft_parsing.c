@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:30:26 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/29 12:18:13 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/29 15:12:33 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	ft_parsing(t_data *nb, char *str)
 {
 	int		i;
-	int		tab_len;
 
 	i = 0;
 	if (nb->tot == 1)
@@ -24,22 +23,22 @@ int	ft_parsing(t_data *nb, char *str)
 	nb->initial_tab = malloc(sizeof(int) * (nb->tot + 1));
 	//====================================================
 	nb->set = ft_split(str, ' ');
-	if (!ft_check_limits(nb, tab_len))
+	if (!ft_check_limits(nb, nb->tot))
 		return (ft_error());
-	while (i < tab_len)
+	while (i < nb->tot)
 	{
 			nb->initial_tab[i] = ft_atoi(nb->set[i]);
 			i++;
 	}
 	nb->initial_tab[i] = '\0';
-	if (!ft_check_double(nb, tab_len))
+	if (!ft_check_double(nb, nb->tot))
 		return (ft_error());
-	if (!ft_check_ifsorted(nb, tab_len))
+	if (!ft_check_ifsorted(nb, nb->tot))
 		return (ft_error());
 	return (1);
 }
 
-int	ft_parsing2(t_data *nb, char **str, int ac)
+int	ft_parsing2(t_data *nb, char **str)
 {
 	int		i;
 	int		j;

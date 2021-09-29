@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:18:39 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/29 14:32:42 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/29 15:33:36 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,42 +45,45 @@ void    ft_transfert(t_data *nb)
     }
 }
 
-void    ft_solve_2(t_data *nb)
+int    ft_solve_2(t_data *nb)
 {
     ft_sa(nb);
-    exit(EXIT_SUCCESS);
+    return (1);
 }
 
-void    ft_solve_3(t_data *nb)
+int    ft_solve_3(t_data *nb)
 {
     if (nb->initial_tab[0] == nb->val_max)
     {
         if (nb->initial_tab[2] == nb->val_min)
         {
-            printf("ra\nsa\n");
-            exit(EXIT_SUCCESS);
+            ft_ra(nb);
+            ft_sa(nb);
+            return (1);
 	    }
         else
         {
-            ft_ra(nb, nb->tot);
-            exit(EXIT_SUCCESS);
+            ft_ra(nb);
+            return (1);
         }   
     }
     if (nb->initial_tab[0] == nb->val_min)
     {
-        printf("sa\nra\n");
-        exit(EXIT_SUCCESS);
+        ft_sa(nb);
+        ft_ra(nb);
+        return (1);
     }
     else
     {
         if (nb->initial_tab[2] == nb->val_min)
         {
-            printf("rra\n");
-            exit(EXIT_SUCCESS);
+            ft_rra(nb);
+            return (1);
 	    }
         else
             ft_solve_2(nb);
     }
+    return (1);
 }
 
 // void    ft_solve_more(t_data *nb)
@@ -99,20 +102,28 @@ void    ft_solve_all(t_data *nb)
     //====================================
     ft_init_val(nb);
     ft_transfert(nb);
-    
     if (nb->tot == 2)
         ft_solve_2(nb);
     if (nb->tot == 3)
-        ft_solve_3(nb);
-        
+        if (ft_solve_3(nb))
+        {
+            //***************************************
+            //printing
+            i = 0;
+            while (i < nb->tot)
+                printf("|   %d   ", nb->stack_a->tab[i++]);
+            //*********************************************
+            exit(EXIT_SUCCESS);
+        }
+    
     // if (nb->tot > 3)
     //     ft_solve_more(nb);
-    //****************************************************
+    //---------------------------------------------------------------
      //nb->stack_b = malloc(sizeof(t_stack)); //not necessary for now
     // printf("taille du tableau %lu\n", (sizeof(int) * 10));
     // printf("taille du pointeur de nb->tab %lu\n", sizeof(int *));
     // printf("taille de la structure %lu\n", sizeof(t_data));
     //ft_init_stack(nb->stack_b, nb); //uncomment if used
-    //****************************************************
+    //---------------------------------------------------------------
 }
 
