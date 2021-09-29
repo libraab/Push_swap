@@ -6,7 +6,7 @@
 #    By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/13 09:31:21 by abouhlel          #+#    #+#              #
-#    Updated: 2021/09/27 13:57:02 by abouhlel         ###   ########.fr        #
+#    Updated: 2021/09/29 14:57:38 by abouhlel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,10 @@ HEADER_FILE 		= push_swap.h
 SRCS				= main.c \
 						ft_parsing.c \
 						ft_errors.c \
-						ft_check.c \
+						ft_check_arg_valid.c \
 						ft_solve.c \
+						ft_check_sorted.c \
+						ft_move.c \
 						
 
 SRC					= $(addprefix ${FOLDER},${SRCS})

@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:31:49 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/28 16:55:14 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/29 14:59:26 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,24 +29,23 @@
 
 typedef struct s_stack
 {
-	int		val_max;
-	int		val_min;
-	int		val_med;
 	int		count;
 	int		*tab;
-	int		val;
-	int		x;
-	int		y;
+	int		max;
+	int		min;
 }			t_stack;
 
 typedef struct s_data
 {
-	int		*tab;
+	int		*initial_tab;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	int		val_max;
+	int		val_min;
+	int		med;
 	char	**set;
 	int		value;
 	int		tot;
-	t_stack	*stack_a;
-	t_stack	*stack_b;
 }			t_data;
 
 int		ft_error(void);
@@ -60,8 +59,17 @@ int		ft_check_limits2(char *str);
 bool	ft_valid_nbrs(char *str);
 bool	ft_valid_nbrs2(char *str);
 void    ft_solve_3(t_data *nb);
-void    ft_solve_2(void);
+void    ft_solve_2(t_data *nb);
 void    ft_solve_all(t_data *nb);
-void	ft_init_stack(t_stack *x, t_data *nb);
+void    ft_solve_more(t_data *nb);
+void	ft_init_val(t_data *nb);
+void    ft_pa(t_data *nb);
+void    ft_pb(t_data *nb);
+void    ft_sa(t_data *nb);
+void    ft_sb(t_data *nb);
+void    ft_ra(t_data *nb);
+void    ft_rb(t_data *nb);
+void    ft_rra(t_data *nb);
+void    ft_rrb(t_data *nb);
 
 #endif

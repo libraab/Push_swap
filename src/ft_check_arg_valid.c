@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check.c                                         :+:      :+:    :+:   */
+/*   ft_check_arg_valid.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 14:27:46 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/27 13:47:47 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/29 09:17:40 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	ft_check_double(t_data *nb, int nb_count)
 		j = i + 1;
 		while (j < nb_count)
 		{
-			if (nb->tab[i] == nb->tab[j])
+			if (nb->initial_tab[i] == nb->initial_tab[j])
 				return (0);
 			j++;
 		}
@@ -79,11 +79,11 @@ int	ft_check_ifsorted(t_data *nb, int nb_count)
 	static int	x;
 
 	i = 0;
-	x = nb->tab[i];
+	x = nb->initial_tab[i];
 	while ((i + 1) < nb_count)
 	{
-		if (nb->tab[i + 1] > x)
-			x = nb->tab[i + 1];
+		if (nb->initial_tab[i + 1] > x)
+			x = nb->initial_tab[i + 1];
 		else
 			return (1);
 		i++;
