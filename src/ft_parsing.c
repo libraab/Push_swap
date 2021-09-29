@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:30:26 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/29 15:12:33 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/29 16:58:24 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int	ft_parsing(t_data *nb, char *str)
 	int		i;
 
 	i = 0;
-	if (nb->tot == 1)
-		return (ft_error());
 	//====================================================
 	nb->initial_tab = malloc(sizeof(int) * (nb->tot + 1));
 	//====================================================
@@ -33,8 +31,8 @@ int	ft_parsing(t_data *nb, char *str)
 	nb->initial_tab[i] = '\0';
 	if (!ft_check_double(nb, nb->tot))
 		return (ft_error());
-	if (!ft_check_ifsorted(nb, nb->tot))
-		return (ft_error());
+	if (ft_check_ifsorted(nb, nb->tot))
+		exit(EXIT_SUCCESS);
 	return (1);
 }
 
@@ -55,7 +53,7 @@ int	ft_parsing2(t_data *nb, char **str)
 	}
 	if (!ft_check_double(nb, nb->tot))
 		return (ft_error());
-	if (!ft_check_ifsorted(nb, nb->tot))
-		return (ft_error());
+	if (ft_check_ifsorted(nb, nb->tot))
+		exit(EXIT_SUCCESS);
 	return (1);
 }

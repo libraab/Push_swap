@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 12:12:30 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/29 15:32:39 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/29 16:32:10 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(int argc, char **argv)
 	nb = malloc(sizeof (t_data));
 	//============================
 	if (argc < 2)
-		return (ft_error());
+		return (EXIT_SUCCESS);
 	if (argc == 2)
 	{
 		nb->tot = ft_arg_count(argv[1], ' ');

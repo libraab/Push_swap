@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 14:27:46 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/29 09:17:40 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/29 16:50:45 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,13 +82,12 @@ int	ft_check_ifsorted(t_data *nb, int nb_count)
 	x = nb->initial_tab[i];
 	while ((i + 1) < nb_count)
 	{
-		if (nb->initial_tab[i + 1] > x)
-			x = nb->initial_tab[i + 1];
-		else
-			return (1);
+		if (nb->initial_tab[i + 1] < x)
+			return (0);
+		x = nb->initial_tab[i + 1];
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
 int	ft_check_limits(t_data *nb, int tab_len)

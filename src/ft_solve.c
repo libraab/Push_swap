@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:18:39 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/29 15:33:36 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/29 16:26:17 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,20 +102,20 @@ void    ft_solve_all(t_data *nb)
     //====================================
     ft_init_val(nb);
     ft_transfert(nb);
-    if (nb->tot == 2)
-        ft_solve_2(nb);
-    if (nb->tot == 3)
-        if (ft_solve_3(nb))
-        {
-            //***************************************
-            //printing
-            i = 0;
-            while (i < nb->tot)
-                printf("|   %d   ", nb->stack_a->tab[i++]);
-            //*********************************************
-            exit(EXIT_SUCCESS);
-        }
-    
+    // while (ft_check_sorted())
+    // {
+        
+        if (nb->tot == 2)
+            ft_solve_2(nb);
+        if (nb->tot == 3)
+            ft_solve_3(nb);
+    //}
+    //***************************************
+    //printing
+    while (i < nb->tot)
+        printf("|   %d   ", nb->stack_a->tab[i++]);
+    //*********************************************
+
     // if (nb->tot > 3)
     //     ft_solve_more(nb);
     //---------------------------------------------------------------
