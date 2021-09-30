@@ -6,21 +6,51 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 13:32:50 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/29 15:13:02 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/30 18:41:06 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-// void    ft_pa(t_data *nb)
-// {
-//     printf("pa\n");
-// }
+void    ft_pa(t_data *nb)
+{
+    int i;
+    int x;
+    int temp;
 
-// void    ft_pb(t_data *nb)
-// {
-//     printf("pb\n");
-// }
+    i = 0;
+    x = nb->stack_a->count;
+    temp = nb->stack_b->tab[0];
+    while (i < nb->stack_a->count)
+    {
+        nb->stack_a->tab[x + 1] = nb->stack_a->tab[x];
+        x--;
+    }
+    nb->stack_a->tab[0] = temp;
+    nb->stack_a->count++;
+    nb->stack_b->count--;
+    printf("pa\n");
+}
+
+void    ft_pb(t_data *nb)
+{
+    int i;
+    int x;
+    int temp;
+
+    i = 0;
+    x = nb->stack_b->count;
+    temp = nb->stack_a->tab[0];
+    while (i < nb->stack_b->count)
+    {
+        nb->stack_b->tab[x + 1] = nb->stack_b->tab[x];
+        x--;
+    }
+    nb->stack_b->tab[0] = temp;
+    nb->stack_b->count++;
+    nb->stack_a->count--;
+    printf("pb\n");
+}
 
 void    ft_sa(t_data *nb)
 {

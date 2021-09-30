@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 12:12:30 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/29 16:32:10 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/30 17:51:21 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,10 @@ int	main(int argc, char **argv)
 		i = 0;
 		while (i < nb->tot)
 			printf("|   %d   ", nb->initial_tab[i++]);
-		//***********************************
-
+		//*********************************** 
 	}
 	
 	if (argc > 2) 
-	{
 		i = 1;
 		nb->tot = argc - 1;
 		while (argv[i])

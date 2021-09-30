@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:18:39 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/29 16:26:17 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/09/30 18:23:37 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void    ft_init_val(t_data *nb)
     i = 0;
     nb->val_max = nb->initial_tab[0];
 	nb->val_min = nb->initial_tab[0];
+    nb->stack_a->count = nb->tot;
+    nb->stack_b->count = 0;
     nb->med = nb->tot / 2;
     while (i < nb->tot)
     {
@@ -37,6 +39,7 @@ void    ft_transfert(t_data *nb)
     i = 0;
     //=================================================
     nb->stack_a->tab = malloc (sizeof (int) * nb->tot);
+    nb->stack_b->tab = malloc (sizeof (int) * nb->tot);
     //=================================================
     while (i < nb->tot)
     {
@@ -99,6 +102,7 @@ void    ft_solve_all(t_data *nb)
     i = 0;
     //====================================
     nb->stack_a = malloc(sizeof(t_stack));
+    nb->stack_b = malloc(sizeof(t_stack));
     //====================================
     ft_init_val(nb);
     ft_transfert(nb);
