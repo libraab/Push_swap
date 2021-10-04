@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:18:39 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/04 09:51:15 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/04 09:54:44 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,6 @@ int	ft_solve_3(t_data *nb)
 	return (1);
 }
 
-// void    ft_solve_more(t_data *nb)
-// { 
-// }
 void	ft_solve_all(t_data *nb)
 {
 	int	i;
@@ -110,8 +107,8 @@ void	ft_solve_all(t_data *nb)
 		printf("| %d ", nb->stack_a->tab[i++]);
 		printf("\n");
 	//*********************************************
-	// if (nb->tot > 3)
-	//     ft_solve_more(nb);
+	if (nb->tot > 3)
+	    ft_solve_more(nb);
 	//---------------------------------------------------------------
 		//nb->stack_b = malloc(sizeof(t_stack)); //not necessary for now
 	// printf("taille du tableau %lu\n", (sizeof(int) * 10));
