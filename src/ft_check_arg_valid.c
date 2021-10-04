@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 14:27:46 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/29 16:50:45 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/04 08:39:02 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ bool	ft_valid_nbrs(char *str)
 			i++;
 		if (str[i] == '\0')
 			return (true);
-		if (ft_isdigit(str[i]) == false && (str[i] != '-' && str[i] != '+' && str[i] != ' '))
+		if (ft_isdigit(str[i]) == false && (str[i] != '-'
+				&& str[i] != '+' && str[i] != ' '))
 			return (false);
 		if (str[i] == '-' || str[i] == '+')
 		{
-			if (i != 0 && (str[i - 1] != ' ' || ft_isdigit(str[i + 1]) == false))
+			if (i != 0 && (str[i - 1] != ' '
+					|| ft_isdigit(str[i + 1]) == false))
 				return (false);
 			i++;
 		}
@@ -47,7 +49,8 @@ bool	ft_valid_nbrs2(char *str)
 	{
 		if (ft_isdigit(str[i]) == false && str[i] != 43 && str[i] != 45)
 			return (false);
-		if ((str[i] == '-' || str[i] == '+') && (ft_isdigit(str[i + 1]) == false || i != 0))
+		if ((str[i] == '-' || str[i] == '+')
+			&& (ft_isdigit(str[i + 1]) == false || i != 0))
 			return (false);
 	}
 	return (true);
@@ -90,23 +93,24 @@ int	ft_check_ifsorted(t_data *nb, int nb_count)
 	return (1);
 }
 
-int	ft_check_limits(t_data *nb, int tab_len)
+int	ft_check_limits(t_data *nb, int tab_len, char *str, int x)
 {
 	int	i;
 
 	i = 0;
-	while (i < tab_len)
+	if (x == 0)
 	{
-		if (ft_atoi2(nb->set[i]) > MAX || ft_atoi2(nb->set[i]) < MIN)
-			return (0);
-		i++;
+		while (i < tab_len)
+		{
+			if (ft_atoi2(nb->set[i]) > MAX || ft_atoi2(nb->set[i]) < MIN)
+				return (0);
+			i++;
+		}
 	}
-	return (1);
-}
-
-int	ft_check_limits2(char *str)
-{
-	if (ft_atoi2(str) > MAX || ft_atoi2(str) < MIN)
-		return (0);
+	if (x == 1)
+	{
+		if (ft_atoi2(str) > MAX || ft_atoi2(str) < MIN)
+			return (0);
+	}
 	return (1);
 }

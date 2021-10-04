@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:31:49 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/29 15:29:01 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/04 09:47:39 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,22 +54,24 @@ int		ft_parsing2(t_data *nb, char **str);
 int		ft_arg_count(char *str, char sp);
 int		ft_check_double(t_data *nb, int nb_count);
 int		ft_check_ifsorted(t_data *nb, int nb_count);
-int		ft_check_limits(t_data *nb, int tab_len);
-int		ft_check_limits2(char *str);
+int		ft_check_limits(t_data *nb, int tab_len, char *str, int x);
 bool	ft_valid_nbrs(char *str);
 bool	ft_valid_nbrs2(char *str);
-int    ft_solve_3(t_data *nb);
-int    ft_solve_2(t_data *nb);
-void    ft_solve_all(t_data *nb);
-int    ft_solve_more(t_data *nb);
+int		ft_solve_3(t_data *nb);
+int		ft_solve_2(t_data *nb);
+void	ft_solve_all(t_data *nb);
+void	ft_solve_more(t_data *nb);
 void	ft_init_val(t_data *nb);
-void    ft_pa(t_data *nb);
-void    ft_pb(t_data *nb);
-void    ft_sa(t_data *nb);
-void    ft_sb(t_data *nb);
-void    ft_ra(t_data *nb);
-void    ft_rb(t_data *nb);
-void    ft_rra(t_data *nb);
-void    ft_rrb(t_data *nb);
+void	ft_pa(t_data *nb);
+void	ft_pb(t_data *nb);
+void	ft_sa(t_data *nb);
+void	ft_sb(t_data *nb);
+void	ft_ss(t_data *nb);
+void	ft_ra(t_data *nb);
+void	ft_rb(t_data *nb);
+void	ft_rr(t_data *nb);
+void	ft_rra(t_data *nb);
+void	ft_rrb(t_data *nb);
+void	ft_rrr(t_data *nb);
 
 #endif

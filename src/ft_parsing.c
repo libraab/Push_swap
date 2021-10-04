@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:30:26 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/09/30 17:36:57 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/04 09:30:58 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ int	ft_parsing(t_data *nb, char *str)
 	nb->initial_tab = malloc(sizeof(int) * (nb->tot + 1));
 	//====================================================
 	nb->set = ft_split(str, ' ');
-	if (!ft_check_limits(nb, nb->tot))
+	if (!ft_check_limits(nb, nb->tot, str, 0))
 		return (ft_error());
 	while (i < nb->tot)
 	{
-			nb->initial_tab[i] = ft_atoi(nb->set[i]);
-			i++;
+		nb->initial_tab[i] = ft_atoi(nb->set[i]);
+		i++;
 	}
 	//nb->initial_tab[i] = '\0';
 	if (!ft_check_double(nb, nb->tot))
