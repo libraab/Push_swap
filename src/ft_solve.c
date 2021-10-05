@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:18:39 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/05 19:38:57 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/05 20:14:36 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ int	ft_solve_3(t_data *nb)
 		ft_rra(nb);
 		return (1);
 	}
-	// else
-	// 	ft_solve_2(nb);
+	else
+		ft_solve_2(nb);
 	return (1);
 }
 

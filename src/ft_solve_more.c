@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 09:53:21 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/05 19:51:39 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/05 20:14:04 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,20 +110,24 @@ int ft_solve_more2(t_data *nb)
     
     while (nb->stack_a->count > 3 )
     {
-        if (nb->stack_b->tab[0] == ft_search_min(nb, 0))
+        //printf("********%d *******%d\n", nb->stack_a->tab[0], ft_search_min(nb, 0));
+        if (nb->stack_a->tab[0] == ft_search_min(nb, 0))
             ft_pb(nb);
-        if (nb->stack_b->tab[nb->stack_a->count - 1] == ft_search_min(nb, 0))
+        if (nb->stack_a->tab[1] == ft_search_min(nb, 0))
+            ft_sa(nb);
+        if (nb->stack_a->tab[nb->stack_a->count - 1] == ft_search_min(nb, 0))
             ft_rra(nb);
-        printf("in\n");
-        ft_pb(nb);
+        else
+            ft_pb(nb);
     }
+    printf("in\n");
     ft_solve_3(nb);
-    if (ft_3_cases(nb, 0) == 3 && (nb->stack_b->tab[0] < nb->stack_b->tab[1]))
-        ft_ss(nb);
-    if (ft_3_cases(nb, 0) == 1 && (nb->stack_b->tab[0] < nb->stack_b->tab[1]))
-        ft_rr(nb);
-    if (ft_3_cases(nb, 0) == 2 && (nb->stack_b->tab[0] < nb->stack_b->tab[1]))
-        ft_rrr(nb);
+    // if (ft_3_cases(nb, 0) == 3 && (nb->stack_b->tab[0] < nb->stack_b->tab[1]))
+    //     ft_ss(nb);
+    // if (ft_3_cases(nb, 0) == 1 && (nb->stack_b->tab[0] < nb->stack_b->tab[1]))
+    //     ft_rr(nb);
+    // if (ft_3_cases(nb, 0) == 2 && (nb->stack_b->tab[0] < nb->stack_b->tab[1]))
+    //     ft_rrr(nb);
     while (nb->stack_b->count > 0)
     {
         ft_pa(nb);
