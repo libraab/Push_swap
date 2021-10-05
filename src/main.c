@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 12:12:30 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/04 09:51:07 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/05 18:44:03 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_str_arg(t_data *nb, char *argv)
 	//printing the list after storing it
 	i = 0;
 	while (i < nb->tot)
-		printf("| %d ", nb->initial_tab[i++]);
+		printf("| %d |", nb->initial_tab[i++]);
 		printf("\n");
 	//*********************************** 
 	return (1);
@@ -65,7 +65,7 @@ int	ft_many_arg(t_data *nb, char **argv)
 	//printing the list after storing it
 	i = 0;
 	while (i < nb->tot)
-		printf("| %d ", nb->initial_tab[i++]);
+		printf("| %d |", nb->initial_tab[i++]);
 		printf("\n");
 	//*******************************
 	return (1);
@@ -88,4 +88,6 @@ int	main(int argc, char **argv)
 		ft_many_arg(nb, argv);
 	}
 	ft_solve_all(nb);
+	//*****************************************
+	printf("\nYou made %d moves\n", nb->moves);
 }

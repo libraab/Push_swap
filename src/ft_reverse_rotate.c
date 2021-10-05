@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 08:55:54 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/04 09:06:36 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/05 18:42:39 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ void	ft_rra(t_data *nb)
 	}
 	nb->stack_a->tab[0] = temp;
 	printf("rra\n");
+	nb->moves++;
+	for (int i = 0; i < nb->stack_a->count; i++)
+        printf ("| %d |", nb->stack_a->tab[i]);
+		printf("\n");
 }
 
 void	ft_rrb(t_data *nb)
@@ -44,6 +48,10 @@ void	ft_rrb(t_data *nb)
 	}
 	nb->stack_b->tab[0] = temp;
 	printf("rrb\n");
+	nb->moves++;
+	for (int i = 0; i < nb->stack_a->count; i++)
+        printf ("| %d |", nb->stack_a->tab[i]);
+		printf("\n");
 }
 
 void	ft_rrr(t_data *nb)
@@ -64,4 +72,8 @@ void	ft_rrr(t_data *nb)
 	nb->stack_a->tab[0] = tempa;
 	nb->stack_b->tab[0] = tempb;
 	printf("rrr\n");
+	nb->moves++;
+	for (int i = 0; i < nb->stack_a->count; i++)
+        printf ("| %d |", nb->stack_a->tab[i]);
+		printf("\n");
 }

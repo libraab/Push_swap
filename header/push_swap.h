@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:31:49 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/04 11:06:38 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/05 19:31:23 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ typedef struct s_data
 	int		val_min;
 	int		med;
 	char	**set;
-	int		value;
+	int		moves;
 	int		tot;
 }			t_data;
 
@@ -53,14 +53,18 @@ int		ft_parsing2(t_data *nb, char **str);
 int		ft_arg_count(char *str, char sp);
 int		ft_check_double(t_data *nb, int nb_count);
 int		ft_check_ifsorted(t_data *nb, int nb_count);
+int		ft_check_sorted(t_data *nb, int count, int x);
 int		ft_check_limits(t_data *nb, int tab_len, char *str, int x);
-bool	ft_valid_nbrs(char *str);
+int		ft_search_max(t_data *nb, int x);
+int		ft_solve_more2(t_data *nb);
+int		ft_search_min(t_data *nb, int x);
+int		ft_3_cases(t_data *nb, int x);
 bool	ft_valid_nbrs2(char *str);
+bool	ft_valid_nbrs(char *str);
+int		ft_solve_more(t_data *nb);
 int		ft_solve_3(t_data *nb);
 int		ft_solve_2(t_data *nb);
 void	ft_solve_all(t_data *nb);
-void	ft_solve_more(t_data *nb);
-void	ft_init_val(t_data *nb);
 void	ft_pa(t_data *nb);
 void	ft_pb(t_data *nb);
 void	ft_sa(t_data *nb);

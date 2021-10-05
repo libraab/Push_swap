@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 13:32:50 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/04 08:54:19 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/05 19:07:54 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,12 @@ void	ft_pa(t_data *nb)
 	i = 0;
 	x = nb->stack_a->count;
 	temp = nb->stack_b->tab[0];
-	while (i < nb->stack_a->count)
+	while (i < nb->stack_b->count - 1)
+	{
+		nb->stack_b->tab[i] = nb->stack_b->tab[i + 1];
+		i++;
+	}
+	while (x >= 0)
 	{
 		nb->stack_a->tab[x + 1] = nb->stack_a->tab[x];
 		x--;
@@ -30,6 +35,13 @@ void	ft_pa(t_data *nb)
 	nb->stack_a->count++;
 	nb->stack_b->count--;
 	printf("pa\n");
+	nb->moves++;
+	for (int i = 0; i < nb->stack_a->count; i++)
+        printf ("| %d |", nb->stack_a->tab[i]);
+	printf(" <----- ");
+	for (int i = 0; i < nb->stack_b->count; i++)
+        printf ("| %d |", nb->stack_b->tab[i]);
+		printf("\n");
 }
 
 void	ft_pb(t_data *nb)
@@ -41,8 +53,14 @@ void	ft_pb(t_data *nb)
 	i = 0;
 	x = nb->stack_b->count;
 	temp = nb->stack_a->tab[0];
-	while (i < nb->stack_b->count)
+	while (i < nb->stack_a->count - 1)
 	{
+		nb->stack_a->tab[i] = nb->stack_a->tab[i + 1];
+		i++;
+	}
+	while (x >= 0)
+	{
+	
 		nb->stack_b->tab[x + 1] = nb->stack_b->tab[x];
 		x--;
 	}
@@ -50,6 +68,14 @@ void	ft_pb(t_data *nb)
 	nb->stack_b->count++;
 	nb->stack_a->count--;
 	printf("pb\n");
+	nb->moves++;
+	for (int i = 0; i < nb->stack_a->count; i++)
+        printf ("| %d |", nb->stack_a->tab[i]);
+	printf(" -----> ");
+	for (int i = 0; i < nb->stack_b->count; i++)
+        printf ("| %d |", nb->stack_b->tab[i]);
+		printf("\n");
+	
 }
 
 void	ft_sa(t_data *nb)
@@ -60,6 +86,10 @@ void	ft_sa(t_data *nb)
 	nb->stack_a->tab[0] = nb->stack_a->tab[1];
 	nb->stack_a->tab[1] = temp;
 	printf("sa\n");
+	nb->moves++;
+	for (int i = 0; i < nb->stack_a->count; i++)
+        printf ("| %d |", nb->stack_a->tab[i]);
+		printf("\n");
 }
 
 void	ft_sb(t_data *nb)
@@ -70,6 +100,10 @@ void	ft_sb(t_data *nb)
 	nb->stack_b->tab[0] = nb->stack_b->tab[1];
 	nb->stack_b->tab[1] = temp;
 	printf("sb\n");
+	nb->moves++;
+	for (int i = 0; i < nb->stack_a->count; i++)
+        printf ("| %d |", nb->stack_a->tab[i]);
+		printf("\n");
 }
 
 void	ft_ss(t_data *nb)
@@ -84,4 +118,11 @@ void	ft_ss(t_data *nb)
 	nb->stack_b->tab[0] = nb->stack_b->tab[1];
 	nb->stack_b->tab[1] = tempb;
 	printf("ss\n");
+	nb->moves++;
+	for (int i = 0; i < nb->stack_a->count; i++)
+        printf ("| %d |", nb->stack_a->tab[i]);
+	printf(" -----> ");
+	for (int i = 0; i < nb->stack_b->count; i++)
+        printf ("| %d |", nb->stack_b->tab[i]);
+		printf("\n");
 }
