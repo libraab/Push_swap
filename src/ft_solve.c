@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:18:39 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/06 10:22:01 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/06 16:34:11 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_solve_2(t_data *nb)
 
 int	ft_solve_3(t_data *nb)
 {
-	printf("solve3\n");
+	printf("solving 3\n");
 	if (nb->stack_a->tab[0] == ft_search_min(nb, 0) && nb->stack_a->tab[2] == ft_search_max(nb, 0))
 		return (1);
 	if (nb->stack_a->tab[0] == ft_search_max(nb, 0) && nb->stack_a->tab[2] == ft_search_min(nb, 0))
@@ -93,7 +93,7 @@ void	ft_solve_all(t_data *nb)
 	// 	printf("\n");
 	//*********************************************
 	//---------------------------------------------------------------
-		//nb->stack_b = malloc(sizeof(t_stack)); //not necessary for now
+	//nb->stack_b = malloc(sizeof(t_stack)); //not necessary for now
 	// printf("taille du tableau %lu\n", (sizeof(int) * 10));
 	// printf("taille du pointeur de nb->tab %lu\n", sizeof(int *));
 	// printf("taille de la structure %lu\n", sizeof(t_data));

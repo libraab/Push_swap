@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 08:27:44 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/05 17:54:44 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/06 19:34:24 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_check_sorted(t_data *nb, int count, int x)
 	i = 0;
 	if (x == 0)
 	{
-		while (i < count)
+		while (i + 1 < count)
 		{
 			if (nb->stack_a->tab[i] < nb->stack_a->tab[i + 1])
 				i++;
@@ -33,9 +33,9 @@ int	ft_check_sorted(t_data *nb, int count, int x)
 		// 	printf("| %d |", nb->stack_a->tab[i]);
 		//****************************************
 	}
-	if (x == 1)
+	if (x == 1) //have to be inverted !!!!!!!!!!!!!!!!!
 	{
-		while (i < count)
+		while (i + 1 < count)
 		{
 			if (nb->stack_b->tab[i] < nb->stack_b->tab[i + 1])
 				i++;
@@ -49,5 +49,6 @@ int	ft_check_sorted(t_data *nb, int count, int x)
 		// 	printf("| %d |", nb->stack_b->tab[i]);
 		//****************************************
 	}
+	printf("sorted\n");
 	return (1);
 }

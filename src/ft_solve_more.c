@@ -6,73 +6,13 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 09:53:21 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/06 10:19:29 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/06 19:26:33 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-int ft_search_max(t_data *nb, int x)
-{
-    int i;
-
-    i = 0;
-    if (x == 0)
-    {
-        nb->stack_a->max = nb->stack_a->tab[i];
-        while (i < nb->stack_a->count)
-        {
-			if (nb->stack_a->tab[i] > nb->stack_a->max)
-				nb->stack_a->max = nb->stack_a->tab[i];
-            i++;
-        }
-        return (nb->stack_a->max);
-    }
-	if (x == 1)
-    {
-        nb->stack_b->max = nb->stack_b->tab[i];
-        while (i < nb->stack_b->count)
-        {
-			if (nb->stack_b->tab[i] > nb->stack_b->max)
-				nb->stack_b->max = nb->stack_b->tab[i];
-            i++;
-        }
-        return (nb->stack_b->max);
-    }
-    return (1);
-}
-
-int ft_search_min(t_data *nb, int x)
-{
-    int i;
-
-    i = 0;
-    if (x == 0)
-    {
-        nb->stack_a->min = nb->stack_a->tab[i];
-        while (i < nb->stack_a->count)
-        {
-			if (nb->stack_a->tab[i] < nb->stack_a->min)
-				nb->stack_a->min = nb->stack_a->tab[i];
-            i++;
-        }
-        return (nb->stack_a->min);
-    }
-	if (x == 1)
-    {
-        nb->stack_b->min = nb->stack_b->tab[i];
-        while (i < nb->stack_b->count)
-        {
-			if (nb->stack_b->tab[i] < nb->stack_b->min)
-				nb->stack_b->min = nb->stack_b->tab[i];
-            i++;
-        }
-        return (nb->stack_b->min);
-    }
-    return (1);
-}
-
-int ft_solve_more(t_data *nb)
+/*int ft_solve_more(t_data *nb)
 {
     int i;
 
@@ -101,31 +41,54 @@ int ft_solve_more(t_data *nb)
     while (nb->stack_b->count > 0)
         ft_pa(nb);
     return (1);
-}
-int ft_solve_more2(t_data *nb)//secomd strategy
+}*/
+
+// int ft_sending_min(t_data *nb)
+// {
+    
+// }
+
+// int ft_sending_max(t_data *nb)
+// {
+    
+// }
+
+int	ft_solve_more2(t_data *nb) //second strategy
 {
     int i;
 
     i = 0;
-    while (nb->stack_a->count > 3 )
+    while ((nb->stack_a->count > 3 && (ft_check_sorted(nb, nb->stack_a->count, 0) == 0)))
     {
         //printf("********%d *******%d\n", nb->stack_a->tab[0], ft_search_min(nb, 0));
-        if (nb->stack_a->tab[0] == ft_search_min(nb, 0))
-            ft_pb(nb);
+        // if (nb->stack_a->tab[0] == ft_search_min(nb, 0))
+        //     ft_pb(nb);
+        if (nb->stack_a->tab[0] == ft_search_max(nb, 0))
+        {
+            printf("in\n");
+            ft_ra(nb);
+            if (ft_check_sorted(nb, nb->stack_a->count, 0) == 1)
+                return (1);
+        }
+        
         if (nb->stack_a->tab[1] == ft_search_min(nb, 0))
         {
-            ft_sa(nb);
-            ft_pb(nb);
-        }
-        if (nb->stack_a->tab[nb->stack_a->count - 1] == ft_search_min(nb, 0))
+            if (nb->stack_a->tab[0] == ft_search_max(nb, 0))
+            	ft_ra(nb);
+			else
+			{
+                ft_sa(nb);
+                if (ft_check_sorted(nb, nb->stack_a->count, 0) == 1)
+                    return (1);
+            }
+		}
+		if (nb->stack_a->tab[nb->stack_a->count - 1] == ft_search_min(nb, 0))
+		{
             ft_rra(nb);
-        // if (nb->stack_a->tab[nb->stack_a->count - 2] == ft_search_min(nb, 0))
-        // {
-        //     ft_rra(nb);
-        //     ft_rra(nb);
-        // } 
-        else
-            ft_pb(nb);
+            if (ft_check_sorted(nb, nb->stack_a->count, 0) == 1)
+                return (1);
+        }
+        ft_pb(nb);
     }
     ft_solve_3(nb);
     // if (ft_3_cases(nb, 0) == 3 && (nb->stack_b->tab[0] < nb->stack_b->tab[1]))
@@ -136,18 +99,29 @@ int ft_solve_more2(t_data *nb)//secomd strategy
     //     ft_rrr(nb);
     while (nb->stack_b->count > 0)
     {
-        ft_pa(nb);
-        if (nb->stack_a->tab[0] > nb->stack_a->tab[nb->stack_a->count - 1])
-            ft_ra(nb);
-        if (nb->stack_a->tab[0] > nb->stack_a->tab[1])
-            ft_sa(nb);
+		if (ft_check_sorted(nb, nb->stack_a->count, 0))
+    		ft_pa(nb);
+		if (nb->stack_a->tab[0] > nb->stack_a->tab[nb->stack_a->count - 1])
+			ft_ra(nb);
+		if (nb->stack_a->tab[0] > nb->stack_a->tab[1])
+		{
+			ft_sa(nb);
+            printf("here\n");
+			if (ft_check_sorted(nb, nb->stack_a->count, 0) == 1 && nb->stack_b->count > 0)
+				ft_pa(nb);
+			if ((nb->stack_a->tab[0] == ft_search_min(nb, 0)) && (ft_check_sorted(nb, nb->stack_a->count, 0) == 0))
+			{
+				ft_pb(nb);
+				ft_solve_3(nb);
+    		}
+    	}
     }
-    if (nb->stack_a->tab[0] > nb->stack_a->tab[1])
-    {
-        printf("here\n");
-        ft_sa(nb);
-    }
+    if ((nb->stack_a->tab[0] > nb->stack_a->tab[1]) && (nb->stack_a->tab[0] < nb->stack_a->tab[nb->stack_a->count - 1]))
+    	ft_sa(nb);
+    if ((nb->stack_a->tab[0] > nb->stack_a->tab[1]) && (nb->stack_a->tab[0] > nb->stack_a->tab[nb->stack_a->count - 1]))
+    	ft_ra(nb);
+    if (ft_check_sorted(nb, nb->stack_a->count, 0) == 0)
+        ft_solve_more2(nb);
+    
     return (1);
-    
-    
 }
