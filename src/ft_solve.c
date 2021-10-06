@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:18:39 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/05 20:14:36 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/06 10:22:01 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,16 @@ void	ft_transfert(t_data *nb)
 
 int	ft_solve_2(t_data *nb)
 {
+	printf("solve2\n");
 	ft_sa(nb);
 	return (1);
 }
 
 int	ft_solve_3(t_data *nb)
 {
+	printf("solve3\n");
+	if (nb->stack_a->tab[0] == ft_search_min(nb, 0) && nb->stack_a->tab[2] == ft_search_max(nb, 0))
+		return (1);
 	if (nb->stack_a->tab[0] == ft_search_max(nb, 0) && nb->stack_a->tab[2] == ft_search_min(nb, 0))
 	{
 		ft_ra(nb);
@@ -49,13 +53,13 @@ int	ft_solve_3(t_data *nb)
 		ft_ra(nb);
 		return (1);
 	}
-	if (nb->stack_a->tab[2] == ft_search_min(nb, 0))
+	if (nb->stack_a->tab[1] == ft_search_max(nb, 0) && nb->stack_a->tab[2] == ft_search_min(nb, 0))
 	{
 		ft_rra(nb);
 		return (1);
 	}
-	else
-		ft_solve_2(nb);
+	if (nb->stack_a->tab[2] == ft_search_max(nb, 0) && nb->stack_a->tab[1] == ft_search_min(nb, 0))
+		ft_sa(nb);
 	return (1);
 }
 

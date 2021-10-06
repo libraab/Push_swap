@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 09:53:21 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/05 20:14:04 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/06 10:19:29 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,25 +102,31 @@ int ft_solve_more(t_data *nb)
         ft_pa(nb);
     return (1);
 }
-int ft_solve_more2(t_data *nb)
+int ft_solve_more2(t_data *nb)//secomd strategy
 {
     int i;
 
     i = 0;
-    
     while (nb->stack_a->count > 3 )
     {
         //printf("********%d *******%d\n", nb->stack_a->tab[0], ft_search_min(nb, 0));
         if (nb->stack_a->tab[0] == ft_search_min(nb, 0))
             ft_pb(nb);
         if (nb->stack_a->tab[1] == ft_search_min(nb, 0))
+        {
             ft_sa(nb);
+            ft_pb(nb);
+        }
         if (nb->stack_a->tab[nb->stack_a->count - 1] == ft_search_min(nb, 0))
             ft_rra(nb);
+        // if (nb->stack_a->tab[nb->stack_a->count - 2] == ft_search_min(nb, 0))
+        // {
+        //     ft_rra(nb);
+        //     ft_rra(nb);
+        // } 
         else
             ft_pb(nb);
     }
-    printf("in\n");
     ft_solve_3(nb);
     // if (ft_3_cases(nb, 0) == 3 && (nb->stack_b->tab[0] < nb->stack_b->tab[1]))
     //     ft_ss(nb);
@@ -133,11 +139,14 @@ int ft_solve_more2(t_data *nb)
         ft_pa(nb);
         if (nb->stack_a->tab[0] > nb->stack_a->tab[nb->stack_a->count - 1])
             ft_ra(nb);
-        // if (nb->stack_a->tab[0] < nb->stack_a->tab[nb->stack_a->count - 1])
-        //     ft_rra(nb);
+        if (nb->stack_a->tab[0] > nb->stack_a->tab[1])
+            ft_sa(nb);
     }
     if (nb->stack_a->tab[0] > nb->stack_a->tab[1])
+    {
+        printf("here\n");
         ft_sa(nb);
+    }
     return (1);
     
     
