@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 08:55:54 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/06 17:45:18 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:08:52 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	ft_rra(t_data *nb)
 	temp = 0;
 	i = nb->stack_a->count - 1;
 	temp = nb->stack_a->tab[i];
-	printf("%d        \n", i);
+	//printf("%d        \n", i);
 	while (i > 0)
 	{
-		printf("putting %d     in      %d    \n", nb->stack_a->tab[i - 1], nb->stack_a->tab[i]);
+		//printf("putting %d     in      %d    \n", nb->stack_a->tab[i - 1], nb->stack_a->tab[i]);
 		nb->stack_a->tab[i] = nb->stack_a->tab[i - 1];
 		i--;
 	}
