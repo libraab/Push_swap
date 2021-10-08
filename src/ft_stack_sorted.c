@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 08:27:44 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/07 11:30:27 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/08 16:27:21 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,6 @@ int	ft_stack_sorted(t_data *nb, int count, int x)
 		// 	printf("| %d |", nb->stack_b->tab[i]);
 		//**********************************************
 	}
-	printf("stack is sorted\n");
+	// printf("stack is sorted\n");
 	return (1);
 }

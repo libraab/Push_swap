@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:18:39 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/07 11:50:49 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/08 12:27:28 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,36 +30,48 @@ void	ft_transfert(t_data *nb)
 
 int	ft_solve_2(t_data *nb)
 {
-	printf("solve2\n");
 	ft_sa(nb);
 	return (1);
 }
 
+bool	ft_2b_not_sorted(t_data *nb)
+{
+	if (nb->stack_b->tab[0] < nb->stack_b->tab[1])
+		return (true);//yes b is NOOOOT sorted
+	return (false);//no b is sorted
+}
+
 int	ft_solve_3(t_data *nb)
 {
-	printf("solving 3\n");
-	if (nb->stack_a->tab[0] == ft_search_min(nb, 0) && nb->stack_a->tab[2] == ft_search_max(nb, 0))
+	if ((nb->stack_a->tab[0] == ft_search_min(nb, 0)) && (nb->stack_a->tab[2] == ft_search_max(nb, 0)))
 		return (1);
-	if (nb->stack_a->tab[0] == ft_search_max(nb, 0) && nb->stack_a->tab[2] == ft_search_min(nb, 0))
+	else if (nb->stack_a->tab[0] == ft_search_max(nb, 0) && nb->stack_a->tab[2] == ft_search_min(nb, 0))
 	{
 		ft_ra(nb);
-		ft_sa(nb);
+		if (ft_2b_not_sorted(nb))
+			ft_ss(nb);
+		else
+			ft_sa(nb);
 	}
-	if (nb->stack_a->tab[0] == ft_search_max(nb, 0) && nb->stack_a->tab[2] != ft_search_min(nb, 0))
+	else if (nb->stack_a->tab[0] == ft_search_max(nb, 0) && nb->stack_a->tab[2] != ft_search_min(nb, 0))
 		ft_ra(nb);
-	if (nb->stack_a->tab[0] == ft_search_min(nb, 0) && nb->stack_a->tab[2] != ft_search_max(nb, 0))
+	else if (nb->stack_a->tab[0] == ft_search_min(nb, 0) && nb->stack_a->tab[2] != ft_search_max(nb, 0))
 	{
-		ft_sa(nb);
+		if (ft_2b_not_sorted(nb))
+			ft_ss(nb);
+		else
+			ft_sa(nb);
 		ft_ra(nb);
-		return (1);
 	}
-	if (nb->stack_a->tab[1] == ft_search_max(nb, 0) && nb->stack_a->tab[2] == ft_search_min(nb, 0))
-	{
+	else if (nb->stack_a->tab[1] == ft_search_max(nb, 0) && nb->stack_a->tab[2] == ft_search_min(nb, 0))
 		ft_rra(nb);
-		return (1);
+	else if (nb->stack_a->tab[2] == ft_search_max(nb, 0) && nb->stack_a->tab[1] == ft_search_min(nb, 0))
+	{
+		if (ft_2b_not_sorted(nb))
+			ft_ss(nb);
+		else
+			ft_sa(nb);
 	}
-	if (nb->stack_a->tab[2] == ft_search_max(nb, 0) && nb->stack_a->tab[1] == ft_search_min(nb, 0))
-		ft_sa(nb);
 	return (1);
 }
 
@@ -76,14 +88,11 @@ void	ft_solve_all(t_data *nb)
 	nb->stack_a->count = nb->tot;
 	nb->stack_b->count = 0;
 	ft_transfert(nb);
-	// while (ft_check_sorted())
-	// {
 	if (nb->tot == 2)
 		ft_solve_2(nb);
 	if (nb->tot == 3)
 		ft_solve_3(nb);
 	if (nb->tot > 3)
-	    //ft_solve_more(nb);
 		ft_solve_more2(nb);
 	//}
 	//********************************************

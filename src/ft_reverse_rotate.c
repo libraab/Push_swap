@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 08:55:54 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/07 09:08:52 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/08 16:26:47 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	ft_rra(t_data *nb)
 	nb->stack_a->tab[0] = temp;
 	printf("rra\n");
 	nb->moves++;
-	for (int i = 0; i < nb->stack_a->count; i++)
-        printf ("| %d |", nb->stack_a->tab[i]);
-		printf("\n");
+	// for (int i = 0; i < nb->stack_a->count; i++)
+    //     printf ("| %d |", nb->stack_a->tab[i]);
+	// 	printf("\n");
 }
 
 void	ft_rrb(t_data *nb)
@@ -51,9 +51,9 @@ void	ft_rrb(t_data *nb)
 	nb->stack_b->tab[0] = temp;
 	printf("rrb\n");
 	nb->moves++;
-	for (int i = 0; i < nb->stack_a->count; i++)
-        printf ("| %d |", nb->stack_a->tab[i]);
-		printf("\n");
+	// for (int i = 0; i < nb->stack_a->count; i++)
+    //     printf ("| %d |", nb->stack_a->tab[i]);
+	// 	printf("\n");
 }
 
 void	ft_rrr(t_data *nb)
@@ -75,7 +75,7 @@ void	ft_rrr(t_data *nb)
 	nb->stack_b->tab[0] = tempb;
 	printf("rrr\n");
 	nb->moves++;
-	for (int i = 0; i < nb->stack_a->count; i++)
-        printf ("| %d |", nb->stack_a->tab[i]);
-		printf("\n");
+	// for (int i = 0; i < nb->stack_a->count; i++)
+    //     printf ("| %d |", nb->stack_a->tab[i]);
+	// 	printf("\n");
 }
