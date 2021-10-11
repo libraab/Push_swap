@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 12:12:30 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/08 16:27:43 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/11 18:00:04 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ int	ft_many_arg(t_data *nb, char **argv)
 	ft_parsing2(nb, argv);
 	//*******************************
 	//printing the list after storing it
-	// i = 0;
-	// while (i < nb->tot)
-	// 	printf("| %d |", nb->initial_tab[i++]);
-	// 	printf("\n");
+	i = 0;
+	while (i < nb->tot)
+		printf("| %d |", nb->initial_tab[i++]);
+		printf("\n");
 	//*******************************
 	return (1);
 }

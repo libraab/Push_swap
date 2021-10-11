@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 08:27:44 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/08 16:27:21 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/11 16:06:46 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_stack_sorted(t_data *nb, int count, int x)
 	{
 		while (i + 1 < count)
 		{
-			if (nb->stack_b->tab[i] < nb->stack_b->tab[i + 1])
+			if (nb->stack_b->tab[i] > nb->stack_b->tab[i + 1])
 				i++;
 			else
 				return (0);

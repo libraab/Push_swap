@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:18:39 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/08 12:27:28 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/11 15:51:36 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,47 +34,6 @@ int	ft_solve_2(t_data *nb)
 	return (1);
 }
 
-bool	ft_2b_not_sorted(t_data *nb)
-{
-	if (nb->stack_b->tab[0] < nb->stack_b->tab[1])
-		return (true);//yes b is NOOOOT sorted
-	return (false);//no b is sorted
-}
-
-int	ft_solve_3(t_data *nb)
-{
-	if ((nb->stack_a->tab[0] == ft_search_min(nb, 0)) && (nb->stack_a->tab[2] == ft_search_max(nb, 0)))
-		return (1);
-	else if (nb->stack_a->tab[0] == ft_search_max(nb, 0) && nb->stack_a->tab[2] == ft_search_min(nb, 0))
-	{
-		ft_ra(nb);
-		if (ft_2b_not_sorted(nb))
-			ft_ss(nb);
-		else
-			ft_sa(nb);
-	}
-	else if (nb->stack_a->tab[0] == ft_search_max(nb, 0) && nb->stack_a->tab[2] != ft_search_min(nb, 0))
-		ft_ra(nb);
-	else if (nb->stack_a->tab[0] == ft_search_min(nb, 0) && nb->stack_a->tab[2] != ft_search_max(nb, 0))
-	{
-		if (ft_2b_not_sorted(nb))
-			ft_ss(nb);
-		else
-			ft_sa(nb);
-		ft_ra(nb);
-	}
-	else if (nb->stack_a->tab[1] == ft_search_max(nb, 0) && nb->stack_a->tab[2] == ft_search_min(nb, 0))
-		ft_rra(nb);
-	else if (nb->stack_a->tab[2] == ft_search_max(nb, 0) && nb->stack_a->tab[1] == ft_search_min(nb, 0))
-	{
-		if (ft_2b_not_sorted(nb))
-			ft_ss(nb);
-		else
-			ft_sa(nb);
-	}
-	return (1);
-}
-
 void	ft_solve_all(t_data *nb)
 {
 	int	i;
@@ -91,9 +50,13 @@ void	ft_solve_all(t_data *nb)
 	if (nb->tot == 2)
 		ft_solve_2(nb);
 	if (nb->tot == 3)
-		ft_solve_3(nb);
+		ft_solve_3a(nb);
 	if (nb->tot > 3)
-		ft_solve_more2(nb);
+	{
+		while (!ft_all_sorted(nb))
+			ft_solve_more2(nb);
+	}
+		
 	//}
 	//********************************************
 	//printing

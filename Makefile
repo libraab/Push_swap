@@ -6,7 +6,7 @@
 #    By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/13 09:31:21 by abouhlel          #+#    #+#              #
-#    Updated: 2021/10/07 10:49:14 by abouhlel         ###   ########.fr        #
+#    Updated: 2021/10/11 15:41:57 by abouhlel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,8 @@ SRCS				= ft_check_arg_valid.c \
 						ft_reverse_rotate.c \
 						ft_stack_sorted.c \
 						ft_solve_more.c \
+						ft_solve_3.c \
 						ft_all_sorted.c \
-						ft_3_cases.c \
 						ft_parsing.c \
 						ft_rotate.c \
 						ft_search.c \

@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:31:49 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/08 10:44:31 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/11 17:53:48 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_stack
 	int		max2;
 	int		min;
 	int		min2;
+	int		med;
 }			t_stack;
 
 typedef struct s_data
@@ -61,14 +62,15 @@ int		ft_search_max(t_data *nb, int x);
 int		ft_search_min(t_data *nb, int x);
 int		ft_search_max2(t_data *nb, int x);
 int		ft_search_min2(t_data *nb, int x);
-int		ft_3_cases(t_data *nb, int x);
+void	ft_search_median(t_data *nb, int x);
 int		ft_solve_more2(t_data *nb);
 bool	ft_valid_nbrs2(char *str);
 int		ft_all_sorted(t_data *nb);
 bool	ft_valid_nbrs(char *str);
 int		ft_solve_more(t_data *nb);
 void	ft_solve_all(t_data *nb);
-int		ft_solve_3(t_data *nb);
+int		ft_solve_3a(t_data *nb);
+int		ft_solve_3b(t_data *nb);
 int		ft_solve_2(t_data *nb);
 void	ft_pa(t_data *nb);
 void	ft_pb(t_data *nb);
