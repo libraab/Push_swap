@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 15:37:43 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/11 15:41:28 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/12 18:31:31 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,34 +62,34 @@ int	ft_solve_3a(t_data *nb)
 
 int	ft_solve_3b(t_data *nb)
 {
-	if ((nb->stack_b->tab[0] == ft_search_min(nb, 0)) && (nb->stack_b->tab[2] == ft_search_max(nb, 0)))
+	if ((nb->stack_b->tab[2] == ft_search_min(nb, 1)) && (nb->stack_b->tab[0] == ft_search_max(nb, 1)))
 		return (1);
-	else if (nb->stack_b->tab[0] == ft_search_max(nb, 0) && nb->stack_b->tab[2] == ft_search_min(nb, 0))
+	else if (nb->stack_b->tab[2] == ft_search_max(nb, 1) && nb->stack_b->tab[0] == ft_search_min(nb, 1))
 	{
-		ft_ra(nb);
+		ft_rb(nb);
 		if (ft_2a_not_sorted(nb))
 			ft_ss(nb);
 		else
-			ft_sa(nb);
+			ft_sb(nb);
 	}
-	else if (nb->stack_b->tab[0] == ft_search_max(nb, 0) && nb->stack_b->tab[2] != ft_search_min(nb, 0))
-		ft_ra(nb);
-	else if (nb->stack_b->tab[0] == ft_search_min(nb, 0) && nb->stack_b->tab[2] != ft_search_max(nb, 0))
+	else if (nb->stack_b->tab[2] == ft_search_max(nb, 1) && nb->stack_b->tab[0] != ft_search_min(nb, 1))
+		ft_rb(nb);
+	else if (nb->stack_b->tab[2] == ft_search_min(nb, 1) && nb->stack_b->tab[0] != ft_search_max(nb, 1))
 	{
 		if (ft_2a_not_sorted(nb))
 			ft_ss(nb);
 		else
-			ft_sa(nb);
-		ft_ra(nb);
+			ft_sb(nb);
+		ft_rb(nb);
 	}
-	else if (nb->stack_b->tab[1] == ft_search_max(nb, 0) && nb->stack_b->tab[2] == ft_search_min(nb, 0))
-		ft_rra(nb);
-	else if (nb->stack_b->tab[2] == ft_search_max(nb, 0) && nb->stack_b->tab[1] == ft_search_min(nb, 0))
+	else if (nb->stack_b->tab[1] == ft_search_max(nb, 1) && nb->stack_b->tab[0] == ft_search_min(nb, 1))
+		ft_rrb(nb);
+	else if (nb->stack_b->tab[0] == ft_search_max(nb, 1) && nb->stack_b->tab[1] == ft_search_min(nb, 1))
 	{
 		if (ft_2a_not_sorted(nb))
 			ft_ss(nb);
 		else
-			ft_sa(nb);
+			ft_sb(nb);
 	}
 	return (1);
 }

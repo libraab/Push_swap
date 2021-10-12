@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:31:49 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/11 17:53:48 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/12 15:22:26 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,9 @@ int		ft_search_max(t_data *nb, int x);
 int		ft_search_min(t_data *nb, int x);
 int		ft_search_max2(t_data *nb, int x);
 int		ft_search_min2(t_data *nb, int x);
-void	ft_search_median(t_data *nb, int x);
+int		ft_search_median(t_data *nb, int x);
 int		ft_solve_more2(t_data *nb);
+int    ft_swap_top(t_data *nb);
 bool	ft_valid_nbrs2(char *str);
 int		ft_all_sorted(t_data *nb);
 bool	ft_valid_nbrs(char *str);

@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:18:39 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/11 15:51:36 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/12 18:33:55 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,9 @@ void	ft_solve_all(t_data *nb)
 	//}
 	//********************************************
 	//printing
-	// while (i < nb->tot)
-	// 	printf("| %d ", nb->stack_a->tab[i++]);
-	// 	printf("\n");
+	while (i < nb->tot)
+		printf("[%d]", nb->stack_a->tab[i++]);
+		printf("\n");
 	//*********************************************
 	//---------------------------------------------------------------
 	//nb->stack_b = malloc(sizeof(t_stack)); //not necessary for now

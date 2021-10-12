@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 08:44:24 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/11 18:00:54 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/12 15:27:00 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void	ft_ra(t_data *nb)
 	nb->stack_a->tab[i - 1] = temp;
 	printf("ra\n");
 	nb->moves++;
-	for (int i = 0; i < nb->stack_a->count; i++)
-        printf ("| %d |", nb->stack_a->tab[i]);
-		printf("\n");
+	// for (int i = 0; i < nb->stack_a->count; i++)
+    //     printf ("| %d |", nb->stack_a->tab[i]);
+	// 	printf("\n");
 }
 
 void	ft_rb(t_data *nb)
@@ -34,51 +34,54 @@ void	ft_rb(t_data *nb)
 	int	i;
 	int	temp;
 
-	i = 1;
+	i = 0;
 	temp = nb->stack_b->tab[0];
-	while (i++ < nb->stack_b->count)
+	while (i++ < nb->stack_b->count - 1)
 		nb->stack_b->tab[i - 1] = nb->stack_b->tab[i];
 	nb->stack_b->tab[i - 1] = temp;
 	printf("rb\n");
 	nb->moves++;
-	for (int i = 0; i < nb->stack_a->count; i++)
-        printf ("| %d |", nb->stack_a->tab[i]);
-		printf("\n");
+	// for (int i = 0; i < nb->stack_b->count; i++)
+    //     printf ("| %d |", nb->stack_b->tab[i]);
+	// 	printf("\n");
 }
 
 void	ft_rr(t_data *nb)
 {
-	int	i;
-	int	tempa;
-	int	tempb;
-
-	i = 1;
+	ft_ra(nb);
+	ft_rb(nb);
 	
-	tempa = nb->stack_a->tab[0];
-	tempb = nb->stack_b->tab[0];
-	for (int i = 0; i < nb->stack_a->count; i++)
-        printf ("| %d |", nb->stack_a->tab[i]);
-		printf("\n");
-	printf(" -----> ");
-	for (int i = 0; i < nb->stack_b->count; i++)
-        printf ("| %d |", nb->stack_b->tab[i]);
-		printf("\n");
+	// int	i;
+	// int	tempa;
+	// int	tempb;
+
+	// i = 1;
+	
+	// tempa = nb->stack_a->tab[0];
+	// tempb = nb->stack_b->tab[0];
+	// for (int i = 0; i < nb->stack_a->count; i++)
+    //     printf ("| %d |", nb->stack_a->tab[i]);
+	// 	printf("\n");
+	// printf(" -----> ");
+	// for (int i = 0; i < nb->stack_b->count; i++)
+    //     printf ("| %d |", nb->stack_b->tab[i]);
+	// 	printf("\n");
 		
-	while (i++ < nb->stack_b->count)
-		nb->stack_b->tab[i - 1] = nb->stack_b->tab[i];
-	nb->stack_b->tab[i - 1] = tempb;
-	i = 1;
-	while (i++ < nb->stack_a->count - 1)
-		nb->stack_a->tab[i - 1] = nb->stack_a->tab[i];
-	nb->stack_a->tab[i - 1] = tempa;
-	nb->moves++;
+	// while (i++ < nb->stack_b->count)
+	// 	nb->stack_b->tab[i - 1] = nb->stack_b->tab[i];
+	// nb->stack_b->tab[i - 1] = tempb;
+	// i = 1;
+	// while (i++ < nb->stack_a->count - 1)
+	// 	nb->stack_a->tab[i - 1] = nb->stack_a->tab[i];
+	// nb->stack_a->tab[i - 1] = tempa;
+	// nb->moves++;
 	printf("rr\n");
 	
-	for (int i = 0; i < nb->stack_a->count; i++)
-        printf ("| %d |", nb->stack_a->tab[i]);
-		printf("\n");
-	printf(" -----> ");
-	for (int i = 0; i < nb->stack_b->count; i++)
-        printf ("| %d |", nb->stack_b->tab[i]);
-		printf("\n");
+	// for (int i = 0; i < nb->stack_a->count; i++)
+    //     printf ("| %d |", nb->stack_a->tab[i]);
+	// 	printf("\n");
+	// printf(" -----> ");
+	// for (int i = 0; i < nb->stack_b->count; i++)
+    //     printf ("| %d |", nb->stack_b->tab[i]);
+	// 	printf("\n");
  }
