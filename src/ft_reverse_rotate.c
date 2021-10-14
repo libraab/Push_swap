@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 08:55:54 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/08 16:26:47 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/14 10:08:10 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,8 @@ void	ft_rra(t_data *nb)
 	temp = 0;
 	i = nb->stack_a->count - 1;
 	temp = nb->stack_a->tab[i];
-	//printf("%d        \n", i);
 	while (i > 0)
 	{
-		//printf("putting %d     in      %d    \n", nb->stack_a->tab[i - 1], nb->stack_a->tab[i]);
 		nb->stack_a->tab[i] = nb->stack_a->tab[i - 1];
 		i--;
 	}
@@ -31,8 +29,11 @@ void	ft_rra(t_data *nb)
 	printf("rra\n");
 	nb->moves++;
 	// for (int i = 0; i < nb->stack_a->count; i++)
-    //     printf ("| %d |", nb->stack_a->tab[i]);
-	// 	printf("\n");
+	// 	printf("[%d]", nb->stack_a->tab[i]);
+	// printf(" -----> ");
+	// for (int i = 0; i < nb->stack_b->count; i++)
+	// 	printf("[%d]", nb->stack_b->tab[i]);
+	// printf("\n");
 }
 
 void	ft_rrb(t_data *nb)
@@ -52,8 +53,11 @@ void	ft_rrb(t_data *nb)
 	printf("rrb\n");
 	nb->moves++;
 	// for (int i = 0; i < nb->stack_a->count; i++)
-    //     printf ("| %d |", nb->stack_a->tab[i]);
-	// 	printf("\n");
+	// 	printf("[%d]", nb->stack_a->tab[i]);
+	// printf(" -----> ");
+	// for (int i = 0; i < nb->stack_b->count; i++)
+	// 	printf("[%d]", nb->stack_b->tab[i]);
+	// printf("\n");
 }
 
 void	ft_rrr(t_data *nb)
@@ -76,6 +80,9 @@ void	ft_rrr(t_data *nb)
 	printf("rrr\n");
 	nb->moves++;
 	// for (int i = 0; i < nb->stack_a->count; i++)
-    //     printf ("| %d |", nb->stack_a->tab[i]);
-	// 	printf("\n");
+	// 	printf("[%d]", nb->stack_a->tab[i]);
+	// printf(" -----> ");
+	// for (int i = 0; i < nb->stack_b->count; i++)
+	// 	printf("[%d]", nb->stack_b->tab[i]);
+	// printf("\n");
 }

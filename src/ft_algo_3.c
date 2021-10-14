@@ -1,30 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_solve_3.c                                       :+:      :+:    :+:   */
+/*   ft_algo_3.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 15:37:43 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/12 18:31:31 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/14 11:00:07 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
-
-bool	ft_2b_not_sorted(t_data *nb)
-{
-	if (nb->stack_b->tab[0] < nb->stack_b->tab[1])
-		return (true);//yes b is NOOOOT sorted
-	return (false);//no b is sorted
-}
-
-bool	ft_2a_not_sorted(t_data *nb)
-{
-	if (nb->stack_a->tab[0] < nb->stack_a->tab[1])
-		return (true);//yes b is NOOOOT sorted
-	return (false);//no b is sorted
-}
 
 int	ft_solve_3a(t_data *nb)
 {

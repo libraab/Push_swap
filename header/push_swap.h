@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:31:49 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/12 15:22:26 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/14 11:22:36 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,28 +51,14 @@ typedef struct s_data
 	int		tot;
 }			t_data;
 
-int		ft_parsing(t_data *nb, char *str);
-int		ft_parsing2(t_data *nb, char **str);
 int		ft_arg_count(char *str, char sp);
-int		ft_check_double(t_data *nb, int nb_count);
-int		ft_check_ifsorted(t_data *nb, int nb_count);
-int		ft_stack_sorted(t_data *nb, int count, int x);
-int		ft_check_limits(t_data *nb, int tab_len, char *str, int x);
-int		ft_search_max(t_data *nb, int x);
-int		ft_search_min(t_data *nb, int x);
-int		ft_search_max2(t_data *nb, int x);
-int		ft_search_min2(t_data *nb, int x);
-int		ft_search_median(t_data *nb, int x);
-int		ft_solve_more2(t_data *nb);
-int    ft_swap_top(t_data *nb);
-bool	ft_valid_nbrs2(char *str);
-int		ft_all_sorted(t_data *nb);
-bool	ft_valid_nbrs(char *str);
-int		ft_solve_more(t_data *nb);
-void	ft_solve_all(t_data *nb);
-int		ft_solve_3a(t_data *nb);
-int		ft_solve_3b(t_data *nb);
+int		ft_str_arg(t_data *nb, char *argv);
+int		ft_many_arg(t_data *nb, char **argv);
+int		ft_parsing2(t_data *nb, char **str);
+int		ft_parsing(t_data *nb, char *str);
+void	ft_transfert(t_data *nb);
 int		ft_solve_2(t_data *nb);
+void	ft_solve(t_data *nb);
 void	ft_pa(t_data *nb);
 void	ft_pb(t_data *nb);
 void	ft_sa(t_data *nb);
@@ -84,6 +70,25 @@ void	ft_rr(t_data *nb);
 void	ft_rra(t_data *nb);
 void	ft_rrb(t_data *nb);
 void	ft_rrr(t_data *nb);
+bool	ft_2a_not_sorted(t_data *nb);
+bool	ft_2b_not_sorted(t_data *nb);
+int		ft_solve_3a(t_data *nb);
+int		ft_solve_3b(t_data *nb);
+int		ft_all_sorted(t_data *nb);
+int		ft_swap_top(t_data *nb);
+int		ft_big_algo(t_data *nb);
+bool    number_under_exist(t_data *nb);
 int		ft_error(void);
+int		ft_search_max(t_data *nb, int x);
+int		ft_search_max2(t_data *nb, int x);
+int		ft_search_min(t_data *nb, int x);
+int		ft_search_min2(t_data *nb, int x);
+int		ft_search_median(t_data *nb, int x);
+bool	ft_valid_nbrs(char *str);
+bool	ft_valid_nbrs2(char *str);
+int		ft_check_double(t_data *nb, int nb_count);
+int		ft_check_ifsorted(t_data *nb, int nb_count);
+int		ft_check_limits(t_data *nb, int tab_len, char *str, int x);
+int		ft_stack_sorted(t_data *nb, int count, int x);
 
 #endif

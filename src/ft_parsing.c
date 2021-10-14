@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:30:26 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/05 11:07:26 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/14 10:07:21 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_parsing(t_data *nb, char *str)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	//====================================================
@@ -28,7 +28,6 @@ int	ft_parsing(t_data *nb, char *str)
 		nb->initial_tab[i] = ft_atoi(nb->set[i]);
 		i++;
 	}
-	//nb->initial_tab[i] = '\0';
 	if (!ft_check_double(nb, nb->tot))
 		return (ft_error());
 	if (ft_check_ifsorted(nb, nb->tot))

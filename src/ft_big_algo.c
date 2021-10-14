@@ -1,101 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_solve_more.c                                    :+:      :+:    :+:   */
+/*   ft_big_algo.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 09:53:21 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/12 18:35:37 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/14 11:16:57 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
-
-int ft_search_median(t_data *nb, int x)
-{
-    int i;
-    int under;
-    int nbr;
-    int j;
-    int above;
-
-    
-    i = 0;
-    j = 0;
-    if (x ==0)
-    {
-        while (i < nb->stack_a->count)
-        {
-            nbr = nb->stack_a->tab[i];
-            above = 0;
-            under = 0;
-            j = 0;
-            while (j < nb->stack_a->count)
-            {
-                if (nb->stack_a->tab[j] > nbr)
-                    above++;
-                if (nb->stack_a->tab[j] < nbr)
-                    under++;
-                j++;
-            }
-            if (nb->stack_a->count % 2 == 0)
-            {
-                if (above == under + 1)
-                    return (nbr);
-            }
-            else
-            {
-                if (above == under)
-                    return (nbr);
-            }
-            i++;
-        }
-        return (nb->stack_a->tab[nb->stack_a->count / 2]);
-    }
-    if (x == 1)
-    {
-        while (i < nb->stack_b->count)
-        {
-            nbr = nb->stack_b->tab[i];
-            above = 0;
-            under = 0;
-            j = 0;
-            while (j < nb->stack_b->count)
-            {
-                if (nb->stack_b->tab[j] > nbr)
-                    above++;
-                if (nb->stack_b->tab[j] < nbr)
-                    under++;
-                j++;
-            }
-            if (nb->stack_b->count % 2 == 0)
-            {
-                if (above == under + 1)
-                    return (nbr);
-            }
-            else
-            {
-                if (above == under)
-                    return (nbr);
-            }
-            i++;
-        }
-        return (nb->stack_b->tab[nb->stack_b->count / 2]);
-    }
-    return (0);
-}
-
-int    ft_swap_top(t_data *nb)
-{
-    if ((nb->stack_a->tab[0] > nb->stack_a->tab[1]) && (nb->stack_b->tab[1] > nb->stack_b->tab[0]))
-        ft_ss(nb);
-    if (nb->stack_a->tab[0] > nb->stack_a->tab[1])
-        ft_sa(nb);
-    if (nb->stack_b->tab[0] < nb->stack_b->tab[1])
-        ft_sb(nb);
-    return (1);
-}
 
 bool    number_under_exist(t_data *nb)
 {
@@ -113,7 +28,7 @@ bool    number_under_exist(t_data *nb)
     return (t);
 }
 
-int	ft_solve_more2(t_data *nb)
+int	ft_big_algo(t_data *nb)
 {
     while (nb->stack_a->count > 3)
     {
@@ -133,7 +48,6 @@ int	ft_solve_more2(t_data *nb)
     }
     if (nb->stack_a->count == 3)
         ft_solve_3a(nb);
-    
     // printf("stack a----->");
     // for (int y = 0; y < nb->stack_a->count ;y++)
     //     printf("[%d]", nb->stack_a->tab[y]);
@@ -145,12 +59,8 @@ int	ft_solve_more2(t_data *nb)
     while (nb->stack_b->count > 0 && (!ft_all_sorted(nb)))
     {
         nb->med = ft_search_median(nb, 1);
-       
-                ft_pa(nb);
-                ft_swap_top(nb);
-            
-          
-        
+        ft_pa(nb);
+        ft_swap_top(nb);
         // if (nb->stack_b->count == 3)
         //     ft_solve_3b(nb);
         if (ft_stack_sorted(nb, nb->stack_b->count, 1) == 1)
@@ -159,24 +69,17 @@ int	ft_solve_more2(t_data *nb)
                 ft_pa(nb);
         }
     }
-    
-    
     // printf("stack a----->");
     // for (int y = 0; y < nb->stack_a->count ;y++)
     //     printf("[%d]", nb->stack_a->tab[y]);
     // printf("\nstack b----->");
     // for (int y = 0; y < nb->stack_b->count ;y++)
     //     printf("[%d]", nb->stack_b->tab[y]);
-
-    
     //exit(1);
-
     return (1);
     
 }
 
-// int	ft_solve_more2(t_data *nb)
-// {
 //     int i;
 
 //     while (!ft_all_sorted(nb))

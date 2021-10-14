@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 13:32:50 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/12 15:26:33 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/14 10:06:47 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ void	ft_pa(t_data *nb)
 	printf("pa\n");
 	nb->moves++;
 	// for (int i = 0; i < nb->stack_a->count; i++)
-	// 	printf("| %d |", nb->stack_a->tab[i]);
+	// 	printf("[%d]", nb->stack_a->tab[i]);
 	// printf(" <----- ");
 	// for (int i = 0; i < nb->stack_b->count; i++)
-	// 	printf("| %d |", nb->stack_b->tab[i]);
+	// 	printf("[%d]", nb->stack_b->tab[i]);
 	// printf("\n");
 }
 
@@ -69,10 +69,10 @@ void	ft_pb(t_data *nb)
 	printf("pb\n");
 	nb->moves++;
 	// for (int i = 0; i < nb->stack_a->count; i++)
-	// 	printf("| %d |", nb->stack_a->tab[i]);
+	// 	printf("[%d]", nb->stack_a->tab[i]);
 	// printf(" -----> ");
 	// for (int i = 0; i < nb->stack_b->count; i++)
-	// 	printf("| %d |", nb->stack_b->tab[i]);
+	// 	printf("[%d]", nb->stack_b->tab[i]);
 	// printf("\n");
 }
 
@@ -86,7 +86,10 @@ void	ft_sa(t_data *nb)
 	printf("sa\n");
 	nb->moves++;
 	// for (int i = 0; i < nb->stack_a->count; i++)
-	// 	printf("| %d |", nb->stack_a->tab[i]);
+	// 	printf("[%d]", nb->stack_a->tab[i]);
+	// printf(" -----> ");
+	// for (int i = 0; i < nb->stack_b->count; i++)
+	// 	printf("[%d]", nb->stack_b->tab[i]);
 	// printf("\n");
 }
 
@@ -100,7 +103,10 @@ void	ft_sb(t_data *nb)
 	printf("sb\n");
 	nb->moves++;
 	// for (int i = 0; i < nb->stack_a->count; i++)
-	// 	printf("| %d |", nb->stack_a->tab[i]);
+	// 	printf("[%d]", nb->stack_a->tab[i]);
+	// printf(" -----> ");
+	// for (int i = 0; i < nb->stack_b->count; i++)
+	// 	printf("[%d]", nb->stack_b->tab[i]);
 	// printf("\n");
 }
 
@@ -118,9 +124,9 @@ void	ft_ss(t_data *nb)
 	printf("ss\n");
 	nb->moves++;
 	// for (int i = 0; i < nb->stack_a->count; i++)
-	// 	printf("| %d |", nb->stack_a->tab[i]);
+	// 	printf("[%d]", nb->stack_a->tab[i]);
 	// printf(" -----> ");
 	// for (int i = 0; i < nb->stack_b->count; i++)
-	// 	printf("| %d |", nb->stack_b->tab[i]);
+	// 	printf("[%d]", nb->stack_b->tab[i]);
 	// printf("\n");
 }

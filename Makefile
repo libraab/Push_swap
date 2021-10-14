@@ -6,7 +6,7 @@
 #    By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/13 09:31:21 by abouhlel          #+#    #+#              #
-#    Updated: 2021/10/11 15:41:57 by abouhlel         ###   ########.fr        #
+#    Updated: 2021/10/14 11:14:03 by abouhlel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,22 +18,20 @@ FOLDER				= src/
 
 HEADER_FILE 		= push_swap.h
 
-SRCS				= ft_check_arg_valid.c \
-						ft_reverse_rotate.c \
-						ft_stack_sorted.c \
-						ft_solve_more.c \
-						ft_solve_3.c \
+SRCS				= 	ft_algo_2.c \
+						ft_algo_3.c \
 						ft_all_sorted.c \
+						ft_big_algo.c \
+						ft_errors.c \
+						ft_move.c \
 						ft_parsing.c \
+						ft_reverse_rotate.c \
 						ft_rotate.c \
 						ft_search.c \
-						ft_errors.c \
 						ft_solve.c \
-						ft_move.c \
+						ft_valid_arg.c \
 						main.c \
 						
-						
-
 SRC					= $(addprefix ${FOLDER},${SRCS})
 HEADERS				= $(addprefix ${FOLDER_HEADER},${HEADER_FILE})
 
@@ -116,4 +114,13 @@ bg_cyan 			=	""
 bg_white 			=	""
 
 reset 				=	""
+#################################################################################
+# 	         		##												#####		#
+#					##											   #			#
+#					##											 ########		#
+#  					##												##			#
+#   	 #####		##			####		   #	#	 #			##			#
+#   	#			##		   #	#		   #	#	 #			##			#
+#  	 ########		########################### #### ####			## 			#
+#																				#
 #################################################################################

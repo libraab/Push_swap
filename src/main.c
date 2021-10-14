@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 12:12:30 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/12 17:16:53 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/14 10:11:58 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,11 @@ int	ft_str_arg(t_data *nb, char *argv)
 	if (ft_valid_nbrs(argv) == false)
 		return (ft_error());
 	ft_parsing(nb, argv);
-	//***********************************
-	//printing the list after storing it
-	// i = 0;
-	// while (i < nb->tot)
-	// 	printf("| %d |", nb->initial_tab[i++]);
-	// 	printf("\n");
-	//*********************************** 
+	//***************************************
+	//while (i < nb->tot)
+	// 	printf("[%d]", nb->initial_tab[i++]);
+	//printf("\n");
+	//***************************************
 	return (1);
 }
 
@@ -61,13 +59,11 @@ int	ft_many_arg(t_data *nb, char **argv)
 		i++;
 	}
 	ft_parsing2(nb, argv);
-	//*******************************
-	//printing the list after storing it
-	// i = 0;
+	//****************************************
 	// while (i < nb->tot)
-	// 	printf("[%d]", nb->initial_tab[i++]);
-	// 	printf("\n");
-	//*******************************
+	// 	printf("[%d]", nb->initial->tab[i++]);
+	// printf("\n");
+	//****************************************
 	return (1);
 }
 
@@ -75,9 +71,9 @@ int	main(int argc, char **argv)
 {
 	t_data	*nb;
 
-	//============================
+	//===========================
 	nb = malloc(sizeof (t_data));
-	//============================
+	//===========================
 	if (argc < 2)
 		return (EXIT_SUCCESS);
 	if (argc == 2)
@@ -87,7 +83,8 @@ int	main(int argc, char **argv)
 		nb->tot = argc - 1;
 		ft_many_arg(nb, argv);
 	}
-	ft_solve_all(nb);
+	ft_solve(nb);
 	//*****************************************
 	printf("\nYou made %d moves\n", nb->moves);
+	//*****************************************
 }
