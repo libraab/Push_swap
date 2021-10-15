@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:31:49 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/14 11:22:36 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/15 18:03:47 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,9 @@ int		ft_all_sorted(t_data *nb);
 int		ft_swap_top(t_data *nb);
 int		ft_big_algo(t_data *nb);
 bool    number_under_exist(t_data *nb);
+bool    number_upper_exist(t_data *nb);
+bool	ft_rotate_both(t_data *nb);
+bool	ft_reverse_rotate_both(t_data *nb);
 int		ft_error(void);
 int		ft_search_max(t_data *nb, int x);
 int		ft_search_max2(t_data *nb, int x);
@@ -90,5 +93,7 @@ int		ft_check_double(t_data *nb, int nb_count);
 int		ft_check_ifsorted(t_data *nb, int nb_count);
 int		ft_check_limits(t_data *nb, int tab_len, char *str, int x);
 int		ft_stack_sorted(t_data *nb, int count, int x);
+int		ft_mid_value(t_data *nb, int x);
+void    ft_reset(t_data *nb);
 
 #endif

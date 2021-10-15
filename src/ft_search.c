@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 19:25:55 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/14 11:09:59 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/15 18:04:40 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -208,4 +208,42 @@ int ft_search_median(t_data *nb, int x)
         return (nb->stack_b->tab[nb->stack_b->count / 2]);
     }
     return (0);
+}
+
+int	ft_mid_value(t_data *nb, int x)
+{
+	int i;
+	int j;
+	int nbr;
+	int under;
+	int above;
+	i = 0;
+	while (i < x)
+	{
+		
+		j = 0;
+		nbr = nb->stack_b->tab[i];
+		under = 0;
+		above = 0;
+		while (j < x)
+		{
+			if (nb->stack_b->tab[j] > nbr)	
+				above++;
+			if (nb->stack_b->tab[j] < nbr)
+				under++;
+			j++;
+		}
+		if (x % 2 == 0)
+		{
+			if (above == under + 1)
+				return (nbr);
+		}
+		else
+		{
+			if (above == under)
+				return (nbr);
+		}
+		i++;
+	}
+	return (nb->stack_b->tab[x / 2]);
 }

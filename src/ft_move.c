@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 13:32:50 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/14 10:06:47 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/15 20:00:24 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	ft_pa(t_data *nb)
 	nb->stack_b->count--;
 	printf("pa\n");
 	nb->moves++;
+	
 	// for (int i = 0; i < nb->stack_a->count; i++)
 	// 	printf("[%d]", nb->stack_a->tab[i]);
 	// printf(" <----- ");
@@ -68,6 +69,7 @@ void	ft_pb(t_data *nb)
 	nb->stack_a->count--;
 	printf("pb\n");
 	nb->moves++;
+	
 	// for (int i = 0; i < nb->stack_a->count; i++)
 	// 	printf("[%d]", nb->stack_a->tab[i]);
 	// printf(" -----> ");
@@ -85,6 +87,7 @@ void	ft_sa(t_data *nb)
 	nb->stack_a->tab[1] = temp;
 	printf("sa\n");
 	nb->moves++;
+	
 	// for (int i = 0; i < nb->stack_a->count; i++)
 	// 	printf("[%d]", nb->stack_a->tab[i]);
 	// printf(" -----> ");
@@ -102,6 +105,7 @@ void	ft_sb(t_data *nb)
 	nb->stack_b->tab[1] = temp;
 	printf("sb\n");
 	nb->moves++;
+	
 	// for (int i = 0; i < nb->stack_a->count; i++)
 	// 	printf("[%d]", nb->stack_a->tab[i]);
 	// printf(" -----> ");
@@ -112,17 +116,10 @@ void	ft_sb(t_data *nb)
 
 void	ft_ss(t_data *nb)
 {
-	int	tempa;
-	int	tempb;
-
-	tempa = nb->stack_a->tab[0];
-	tempb = nb->stack_b->tab[0];
-	nb->stack_a->tab[0] = nb->stack_a->tab[1];
-	nb->stack_a->tab[1] = tempa;
-	nb->stack_b->tab[0] = nb->stack_b->tab[1];
-	nb->stack_b->tab[1] = tempb;
+	ft_sa(nb);
+	ft_sb(nb);
 	printf("ss\n");
-	nb->moves++;
+	nb->moves--;
 	// for (int i = 0; i < nb->stack_a->count; i++)
 	// 	printf("[%d]", nb->stack_a->tab[i]);
 	// printf(" -----> ");
