@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:31:49 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/15 18:03:47 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/17 13:58:13 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,7 @@ int		ft_check_limits(t_data *nb, int tab_len, char *str, int x);
 int		ft_stack_sorted(t_data *nb, int count, int x);
 int		ft_mid_value(t_data *nb, int x);
 void    ft_reset(t_data *nb);
+int		ft_best_option(t_data *nb, int max1, int max2);
+int		ft_best_move(t_data *nb, int x);
 
 #endif

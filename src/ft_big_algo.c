@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 09:53:21 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/15 20:09:36 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/17 14:45:52 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,15 @@ bool    number_upper_exist(t_data *nb)
 
 int	ft_big_algo(t_data *nb)
 {
+    //**************************************
+    // printf("\nstack a --------->");
+    // for (int i = 0; i < nb->stack_a->count; i++)
+	// 	printf("[%d]", nb->stack_a->tab[i]);
+	// printf("\nstack b --------->");
+    // for (int i = 0; i < nb->stack_b->count; i++)
+	// 	printf("[%d]", nb->stack_b->tab[i]);
+    //**************************************
+    
     while (nb->stack_a->count > 3)
     {
         nb->med = ft_search_median(nb, 0);
@@ -68,63 +77,134 @@ int	ft_big_algo(t_data *nb)
     }
     if (nb->stack_a->count == 3)
         ft_solve_3a(nb);
-    
-    int i;
-    int x;
-    int back;
-    x = 3;
-
+    //printf ("\nsecond sorting\n");
+    int nbr;
     while (nb->stack_b->count > 0)
     {
-        i = 0;
-        back = 0;
-        nb->med = ft_mid_value(nb, x);
-        while (i < x && nb->stack_b->count > 3)
+        if (ft_best_option(nb, ft_search_max(nb, 1), ft_search_max2(nb, 1)) == 1)
         {
-            if (nb->stack_b->tab[0] <= nb->med)
+            nbr = ft_search_max(nb, 1);
+            while (nb->stack_b->tab[0] != nbr)
             {
-                if (nb->stack_b->tab[1] > nb->med)
-                {
-                    if (ft_2a_not_sorted(nb) == true)
-                        ft_ss(nb);
-                    else
-                        ft_sb(nb);
-                    ft_pa(nb);
-                }
-                else
+                if (ft_best_move(nb, nbr) == 1)
                 {
                     if (ft_rotate_both(nb) == true)
                         ft_rr(nb);
-                    else if (ft_rotate_both(nb) == false)
+                    else
                         ft_rb(nb);
-                    back++;
                 }
+                else if (ft_best_move(nb, nbr) == 0)
+                {
+                    if (ft_reverse_rotate_both(nb) == true)
+                        ft_rrr(nb);
+                    else
+                        ft_rrb(nb);
+                }
+                //**************************************
+                // printf("\nstack a --------->");
+                // for (int i = 0; i < nb->stack_a->count; i++)
+                //     printf("[%d]", nb->stack_a->tab[i]);
+                // printf("\nstack b --------->");
+                // for (int i = 0; i < nb->stack_b->count; i++)
+                //     printf("[%d]", nb->stack_b->tab[i]);
+                //**************************************   
             }
-            if (nb->stack_b->tab[0] > nb->med)
+        }
+        //sleep(1);
+        if (ft_best_option(nb, ft_search_max(nb, 1), ft_search_max2(nb, 1)) == 0)
+        {
+            nbr = ft_search_max2(nb, 1);
+            while (nb->stack_b->tab[0] != nbr)
             {
-                ft_pa(nb);
-                ft_swap_top(nb);
+                if (ft_best_move(nb, nbr) == 1)
+                {
+                    if (ft_rotate_both(nb) == true)
+                        ft_rr(nb);
+                    else
+                        ft_rb(nb);
+                }
+                else if (ft_best_move(nb, nbr) == 0)
+                {
+                    if (ft_reverse_rotate_both(nb) == true)
+                        ft_rrr(nb);
+                    else
+                        ft_rrb(nb);
+                }
+                //sleep(1);
+                //**************************************
+                // printf("\nstack a --------->");
+                // for (int i = 0; i < nb->stack_a->count; i++)
+                //     printf("[%d]", nb->stack_a->tab[i]);
+                // printf("\nstack b --------->");
+                // for (int i = 0; i < nb->stack_b->count; i++)
+                //     printf("[%d]", nb->stack_b->tab[i]);
+                //**************************************   
             }
-            i++;
         }
-        i = 0;
-        while (i < back && nb->stack_b->count > 3)
+        if (nb->stack_b->tab[0] == ft_search_max(nb, 1) || nb->stack_b->tab[0] == ft_search_max2(nb, 1))
         {
-            if (ft_reverse_rotate_both(nb) == true)
-                ft_rrr(nb);
-            else
-                ft_rrb(nb);
-            
+            //sleep(1);
+            //**************************************
+            // printf("\nstack a --------->");
+            // for (int i = 0; i < nb->stack_a->count; i++)
+            //     printf("[%d]", nb->stack_a->tab[i]);
+            // printf("\nstack b --------->");
+            // for (int i = 0; i < nb->stack_b->count; i++)
+            //     printf("[%d]", nb->stack_b->tab[i]);
+            //**************************************
             ft_pa(nb);
-            i++;
+            ft_swap_top(nb);
         }
-        if (nb->stack_b->count == 3)
-        {
-            ft_solve_3b(nb);
-            while (nb->stack_b->count > 0)
-                ft_pa(nb);
-        }
-        x *= 2;
-    }
+        //sleep(1);
+    }    
+
+
+
+
+
+
+    
+    // int i;
+    // int x;
+    // int back;
+    // x = 3;
+
+    // while (nb->stack_b->count > 0)
+    // {
+    //     i = 0;
+    //     back = 0;
+    //     //nb->med = ft_mid_value(nb, x);
+    //     nb->med = ft_search_median(nb, 1);
+    //     while (i < x && nb->stack_b->count > 3)
+    //     {
+    //         if ((nb->stack_b->tab[0] <= nb->med) && (nb->stack_b->tab[1] > nb->med))
+    //         {
+    //             ft_sb(nb);
+    //             ft_pa(nb);
+    //         }
+    //         else if ((nb->stack_b->tab[0] <= nb->med) && (nb->stack_b->tab[1] < nb->med))
+    //         {
+    //             ft_rb(nb);
+    //             back++;
+    //         }
+    //         else if (nb->stack_b->tab[0] > nb->med)
+    //             ft_pa(nb);
+    //         i++;
+    //     }
+    //     i = 0;
+    //     while (i < back && nb->stack_b->count > 3)
+    //     {
+    //         ft_rrb(nb);
+    //         ft_pa(nb);
+    //         i++;
+    //     }
+    //     if (nb->stack_b->count == 3)
+    //     {
+    //         ft_solve_3b(nb);
+    //         while (nb->stack_b->count > 0)
+    //             ft_pa(nb);
+    //     }
+    //     x *= 2;
+    // }
     return (nb->moves);
 }
