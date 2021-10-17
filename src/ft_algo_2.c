@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 10:59:04 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/15 19:52:19 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/17 15:58:06 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_solve_2(t_data *nb)
 int    ft_swap_top(t_data *nb)
 {
     if ((nb->stack_a->tab[0] > nb->stack_a->tab[1]) && (nb->stack_b->tab[1] > nb->stack_b->tab[0]))
-        ft_ss(nb);
+		ft_ss(nb);
     else if (nb->stack_a->tab[0] > nb->stack_a->tab[1])
         ft_sa(nb);
     else if (nb->stack_b->tab[0] < nb->stack_b->tab[1])
@@ -53,7 +53,7 @@ bool	ft_rotate_both(t_data *nb)
 
 bool	ft_reverse_rotate_both(t_data *nb)
 {
-	if ((nb->stack_a->tab[nb->stack_a->count - 1] < nb->stack_a->tab[0]) && (nb->stack_b->tab[nb->stack_b->count - 1] > nb->stack_b->tab[0]))
+	if ((nb->stack_a->tab[nb->stack_a->count - 1] < nb->stack_a->tab[0]) && (nb->stack_b->tab[nb->stack_b->count - 1] > nb->stack_a->tab[0]))
 		return (true);
 	else
 		return (false);

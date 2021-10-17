@@ -6,24 +6,38 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 08:51:45 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/14 11:23:58 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/17 16:50:19 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-int	ft_all_sorted(t_data *nb)
+int	ft_all_sorted(t_data *nb, int x)
 {
 	int	i;
 
 	i = 0;
-	while (i + 1 < nb->tot)
+	if (x == 0)
 	{
-		if (nb->stack_a->tab[i] > nb->stack_a->tab[i + 1])
-			return (0);
-		i++;
+		while (i + 1 < nb->tot)
+		{
+			if (nb->stack_a->tab[i] > nb->stack_a->tab[i + 1])
+				return (0);
+			i++;
+		}
+		return (1);
 	}
-	return (1);
+	if (x == 1)
+	{
+		while (i + 1 < nb->tot)
+		{
+			if (nb->stack_b->tab[i] > nb->stack_b->tab[i + 1])
+				return (0);
+			i++;
+		}
+		return (1);
+	}
+	return (0);
 }
 
 int	ft_stack_sorted(t_data *nb, int count, int x)

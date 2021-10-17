@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:31:49 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/17 13:58:13 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/17 16:50:03 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ bool	ft_2a_not_sorted(t_data *nb);
 bool	ft_2b_not_sorted(t_data *nb);
 int		ft_solve_3a(t_data *nb);
 int		ft_solve_3b(t_data *nb);
-int		ft_all_sorted(t_data *nb);
+int		ft_all_sorted(t_data *nb, int x);
 int		ft_swap_top(t_data *nb);
 int		ft_big_algo(t_data *nb);
 bool    number_under_exist(t_data *nb);
@@ -96,6 +96,9 @@ int		ft_stack_sorted(t_data *nb, int count, int x);
 int		ft_mid_value(t_data *nb, int x);
 void    ft_reset(t_data *nb);
 int		ft_best_option(t_data *nb, int max1, int max2);
+int		ft_best_optiona(t_data *nb, int max1, int max2);
 int		ft_best_move(t_data *nb, int x);
+int		ft_best_movea(t_data *nb, int x);
+int		ft_big_algo2(t_data *nb);
 
 #endif

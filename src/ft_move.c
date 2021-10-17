@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 13:32:50 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/15 20:00:24 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/17 16:12:03 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,10 +116,17 @@ void	ft_sb(t_data *nb)
 
 void	ft_ss(t_data *nb)
 {
-	ft_sa(nb);
-	ft_sb(nb);
+	int	tempa;
+	int tempb;
+
+	tempa = nb->stack_a->tab[0];
+	tempb = nb->stack_b->tab[0];
+	nb->stack_a->tab[0] = nb->stack_a->tab[1];
+	nb->stack_a->tab[1] = tempa;
+	nb->stack_b->tab[0] = nb->stack_b->tab[1];
+	nb->stack_b->tab[1] = tempb;
 	printf("ss\n");
-	nb->moves--;
+	nb->moves++;
 	// for (int i = 0; i < nb->stack_a->count; i++)
 	// 	printf("[%d]", nb->stack_a->tab[i]);
 	// printf(" -----> ");
