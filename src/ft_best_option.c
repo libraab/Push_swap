@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 09:24:51 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/17 16:34:53 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/17 17:39:13 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int ft_best_option(t_data *nb, int max1, int max2)
     return (0);
 }
 
-int ft_best_optiona(t_data *nb, int max1, int max2)
+int ft_best_optiona(t_data *nb, int min1, int min2)
 {
     int index1;
     int index2;
@@ -59,14 +59,14 @@ int ft_best_optiona(t_data *nb, int max1, int max2)
     x = nb->stack_a->count;
     while (i < x)
     {
-        if (nb->stack_a->tab[i] == max1)
+        if (nb->stack_a->tab[i] == min1)
         {
             if (i <= (nb->stack_a->count / 2))
                 index1 = i;
             else
                 index1 = nb->stack_a->count - i;
         }
-        if (nb->stack_a->tab[i] == max2)
+        if (nb->stack_a->tab[i] == min2)
         {
             if (i <= (nb->stack_a->count / 2))
                 index2 = i;

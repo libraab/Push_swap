@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:18:39 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/17 17:19:58 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/17 19:44:26 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,8 @@ void	ft_solve(t_data *nb)
 	{
 		while (!ft_all_sorted(nb, 0))
 		{
-			// ft_reset_b(nb);
 			ft_big_algo(nb);
-			//ft_big_algo(nb);
+			//ft_big_algo2(nb);
 		}
 	}
 	//****************************************
