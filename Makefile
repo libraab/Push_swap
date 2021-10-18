@@ -6,7 +6,7 @@
 #    By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/13 09:31:21 by abouhlel          #+#    #+#              #
-#    Updated: 2021/10/18 08:48:30 by abouhlel         ###   ########.fr        #
+#    Updated: 2021/10/18 14:29:20 by abouhlel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRCS				= 	ft_algo_2.c \
 						main.c \
 						ft_reset.c \
 						ft_best_option.c \
+						ft_utils.c \
 						
 						
 SRC					= $(addprefix ${FOLDER},${SRCS})

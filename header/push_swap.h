@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:31:49 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/17 16:50:03 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/18 18:27:46 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,17 @@ int		ft_best_option(t_data *nb, int max1, int max2);
 int		ft_best_optiona(t_data *nb, int max1, int max2);
 int		ft_best_move(t_data *nb, int x);
 int		ft_best_movea(t_data *nb, int x);
+int		ft_index_a(t_data *nb, int nbr);
+int		ft_index_b(t_data *nb, int nbr);
+int		ft_search_next_a(t_data *nb, int nbr);
+int		ft_search_next_b(t_data *nb, int nbr);
+int		ft_real_index_a(t_data *nb, int nbr);
+int		ft_real_index_b(t_data *nb, int nbr);
+void	ft_top_top(t_data *nb, int nbr);
+void	ft_bot_bot(t_data *nb, int nbr);
+void	ft_bot_top(t_data *nb, int nbr);
+void	ft_top_bot(t_data *nb, int nbr);
+int		ft_best_mv(t_data *nb);
 int		ft_big_algo2(t_data *nb);
 
 #endif

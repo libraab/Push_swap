@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 09:53:21 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/18 09:16:14 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/18 14:12:50 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int	ft_big_algo(t_data *nb)
                 ft_swap_top(nb);
             if (nb->stack_a->tab[0] >= nb->med)
             {
-                if (ft_rotate_both(nb) == true)
-                    ft_rr(nb);
-                else
+                // if (ft_rotate_both(nb) == true)
+                //     ft_rr(nb);
+                // else
                     ft_ra(nb);
             }
             if (nb->stack_a->tab[0] < nb->med)
@@ -48,9 +48,9 @@ int	ft_big_algo(t_data *nb)
             {
                 if (ft_best_move(nb, nbr) == 1)
                 {
-                    if (ft_rotate_both(nb) == true)
-                        ft_rr(nb);
-                    else
+                    // if (ft_rotate_both(nb) == true)
+                    //     ft_rr(nb);
+                    // else
                         ft_rb(nb);
                 }
                 else if (ft_best_move(nb, nbr) == 0)
@@ -69,9 +69,9 @@ int	ft_big_algo(t_data *nb)
             {
                 if (ft_best_move(nb, nbr) == 1)
                 {
-                    if (ft_rotate_both(nb) == true)
-                        ft_rr(nb);
-                    else
+                    // if (ft_rotate_both(nb) == true)
+                    //     ft_rr(nb);
+                    // else
                         ft_rb(nb);
                 }
                 else if (ft_best_move(nb, nbr) == 0)

@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 12:12:30 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/17 16:12:43 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/18 19:10:16 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,6 @@ int	main(int argc, char **argv)
 	}
 	ft_solve(nb);
 	//*****************************************
-	printf("\nYou made %d moves\n", nb->moves);
+	//printf("\nYou made %d moves\n", nb->moves);
 	//*****************************************
 }

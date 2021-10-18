@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:18:39 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/18 11:47:10 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/18 19:10:12 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,24 +76,21 @@ void	ft_solve(t_data *nb)
 		ft_solve_3a(nb);
 	if (nb->tot > 3)
 	{
-		while (!ft_all_sorted(nb, 0))
+		//while (!ft_all_sorted(nb, 0))
 		{
-		 	//ft_big_algo(nb);
-			if (ft_big_algo(nb) > 11500)
-			{
-				ft_reset(nb);
-				ft_ra(nb);
-			}
+		 	//ft_big_algo2(nb);
+			ft_big_algo2(nb);
+			//ft_big_algo2(nb);
 		}
 	}
-	
 	//****************************************
-	for (int i = 0; i < nb->tot; i++)
-		printf("[%d]", nb->initial_tab[i]);
-	printf("\n");
+	// for (int i = 0; i < nb->tot; i++)
+	// 	printf("%d ", nb->initial_tab[i]);
+	// printf("\n");
+	// printf("\n");
 	//****************************************
-	for (int i = 0; i < nb->tot; i++)
-		printf("[%d]", nb->stack_a->tab[i]);
-	printf("\n");
+	// for (int i = 0; i < nb->tot; i++)
+	// 	printf("[%d]", nb->stack_a->tab[i]);
+	// printf("\n");
 	//****************************************
 }
