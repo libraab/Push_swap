@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_big_algo.c                                      :+:      :+:    :+:   */
+/*   ft_big_algo2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 09:53:21 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/18 09:16:14 by abouhlel         ###   ########.fr       */
+/*   Created: 2021/10/18 08:44:30 by abouhlel          #+#    #+#             */
+/*   Updated: 2021/10/18 09:56:28 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-int	ft_big_algo(t_data *nb)
+int	ft_big_algo2(t_data *nb)
 {
     int nbr;
+    
     
     while (nb->stack_a->count > 3) // pushing a
     {
@@ -98,6 +99,43 @@ int	ft_big_algo(t_data *nb)
             }
         }
         
-    }    
+    }
+
+    while (nb->stack_a->count > 3) // pushing to b but sorted
+    {
+        nb->med = ft_search_median(nb, 0);
+        while (number_upper_exist(nb) == true && nb->stack_a->count > 3 && nb->stack_a->tab[0] != ft_search_max(nb, 0))
+        {  
+            if (nb->stack_b->count > 1)
+                ft_swap_top(nb);
+            if (nb->stack_a->tab[0] <= nb->med)
+            {
+                if (ft_rotate_both(nb) == true)
+                    ft_rr(nb);
+                else
+                    ft_ra(nb);
+            }
+            if (nb->stack_a->tab[0] > nb->med)
+                ft_pb(nb);
+            if (nb->stack_b->count == 3)
+                ft_solve_3b(nb);
+        }
+    }
+    if (nb->stack_a->tab[0] == ft_search_max(nb, 0))
+    {
+        ft_pb(nb);
+        ft_swap_top(nb);
+    }
+    if (nb->stack_a->count == 3)
+    {
+        ft_solve_3a(nb);
+        while (nb->stack_a->count > 0)
+        {
+            ft_pb(nb);
+            ft_swap_top(nb);
+        }
+    }
+    
+    
     return (nb->moves);
 }

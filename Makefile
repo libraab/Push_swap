@@ -6,7 +6,7 @@
 #    By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/13 09:31:21 by abouhlel          #+#    #+#              #
-#    Updated: 2021/10/17 09:55:15 by abouhlel         ###   ########.fr        #
+#    Updated: 2021/10/18 08:48:30 by abouhlel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRCS				= 	ft_algo_2.c \
 						ft_algo_3.c \
 						ft_all_sorted.c \
 						ft_big_algo.c \
+						ft_big_algo2.c \
 						ft_errors.c \
 						ft_move.c \
 						ft_parsing.c \
@@ -33,6 +34,7 @@ SRCS				= 	ft_algo_2.c \
 						main.c \
 						ft_reset.c \
 						ft_best_option.c \
+						
 						
 SRC					= $(addprefix ${FOLDER},${SRCS})
 HEADERS				= $(addprefix ${FOLDER_HEADER},${HEADER_FILE})

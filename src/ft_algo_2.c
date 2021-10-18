@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 10:59:04 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/17 15:58:06 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/18 08:55:21 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int    ft_swap_top(t_data *nb)
 
 bool	ft_rotate_both(t_data *nb)
 {
-	if ((nb->stack_a->tab[0] > nb->stack_a->tab[nb->stack_a->count - 1]) && (nb->stack_b->tab[0] < nb->stack_b->tab[nb->stack_b->count - 1]))
+	if ((nb->stack_a->tab[0] > nb->stack_a->tab[nb->stack_a->count - 1]) && (nb->stack_b->tab[0] < ft_search_median(nb, 1)))
 		return (true);
 	else
 		return (false);
@@ -53,7 +53,7 @@ bool	ft_rotate_both(t_data *nb)
 
 bool	ft_reverse_rotate_both(t_data *nb)
 {
-	if ((nb->stack_a->tab[nb->stack_a->count - 1] < nb->stack_a->tab[0]) && (nb->stack_b->tab[nb->stack_b->count - 1] > nb->stack_a->tab[0]))
+	if ((nb->stack_a->tab[nb->stack_a->count - 1] < nb->stack_a->tab[0]) && (nb->stack_b->tab[nb->stack_b->count - 1] > ft_search_median(nb, 1)))
 		return (true);
 	else
 		return (false);

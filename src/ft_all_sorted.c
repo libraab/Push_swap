@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 08:51:45 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/17 19:11:05 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/18 09:42:28 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	ft_all_sorted(t_data *nb, int x)
 {
 	int	i;
-
 	i = 0;
 	if (x == 0)
 	{

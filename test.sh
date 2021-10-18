@@ -8,7 +8,15 @@ make re && ARG=`ruby -e "puts ($1..$2).to_a.shuffle.join(' ')"`; ./push_swap  $A
 #test en printant tout les mouvements
 #./test.sh 1 500 
 #renvoit le nombre de mouvement
-#./test.sh 1 500 | wc -l   
+#./test.sh 1 500 | wc -l  
+
+
+# visualiser command : python3 pyviz.py `ruby -e "puts (-200..200).to_a.shuffle.join(' ')"`  
+
+
+
+
+
 #################################################################################
 # 	         		##												#####		#
 #					##											   #			#
