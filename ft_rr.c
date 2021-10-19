@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rotate.c                                        :+:      :+:    :+:   */
+/*   ft_rr.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 08:44:24 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/19 14:12:41 by abouhlel         ###   ########.fr       */
+/*   Created: 2021/10/19 16:50:08 by abouhlel          #+#    #+#             */
+/*   Updated: 2021/10/19 17:42:02 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/push_swap.h"
+#include "./header/push_swap.h"
 
 void	ft_ra(t_data *nb)
 {
@@ -22,7 +22,6 @@ void	ft_ra(t_data *nb)
 	while (i++ < nb->stack_a->count - 1)
 		nb->stack_a->tab[i - 1] = nb->stack_a->tab[i];
 	nb->stack_a->tab[i - 1] = temp;
-	printf("ra\n");
 	nb->moves++;
 }
 
@@ -36,7 +35,6 @@ void	ft_rb(t_data *nb)
 	while (i++ < nb->stack_b->count - 1)
 		nb->stack_b->tab[i - 1] = nb->stack_b->tab[i];
 	nb->stack_b->tab[i - 1] = temp;
-	printf("rb\n");
 	nb->moves++;
 }
 
@@ -57,6 +55,5 @@ void	ft_rr(t_data *nb)
 	while (j++ < nb->stack_b->count - 1)
 		nb->stack_b->tab[j - 1] = nb->stack_b->tab[j];
 	nb->stack_b->tab[j - 1] = tempb;
-	printf("rr\n");
 	nb->moves++;
 }

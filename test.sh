@@ -12,7 +12,7 @@ make re && ARG=`ruby -e "puts ($1..$2).to_a.shuffle.join(' ')"`; ./push_swap  $A
 
 
 # visualiser command : python3 pyviz.py `ruby -e "puts (-200..200).to_a.shuffle.join(' ')"`  
-
+# tester moyenne command : 
 
 
 

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_move.c                                          :+:      :+:    :+:   */
+/*   ft_mv.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/26 13:32:50 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/19 14:11:59 by abouhlel         ###   ########.fr       */
+/*   Created: 2021/10/19 16:49:49 by abouhlel          #+#    #+#             */
+/*   Updated: 2021/10/19 17:41:48 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/push_swap.h"
+#include "./header/push_swap.h"
 
 void	ft_pa(t_data *nb)
 {
@@ -34,7 +34,6 @@ void	ft_pa(t_data *nb)
 	nb->stack_a->tab[0] = temp;
 	nb->stack_a->count++;
 	nb->stack_b->count--;
-	printf("pa\n");
 	nb->moves++;
 }
 
@@ -60,7 +59,6 @@ void	ft_pb(t_data *nb)
 	nb->stack_b->tab[0] = temp;
 	nb->stack_b->count++;
 	nb->stack_a->count--;
-	printf("pb\n");
 	nb->moves++;
 }
 
@@ -71,7 +69,6 @@ void	ft_sa(t_data *nb)
 	temp = nb->stack_a->tab[0];
 	nb->stack_a->tab[0] = nb->stack_a->tab[1];
 	nb->stack_a->tab[1] = temp;
-	printf("sa\n");
 	nb->moves++;
 }
 
@@ -82,7 +79,6 @@ void	ft_sb(t_data *nb)
 	temp = nb->stack_b->tab[0];
 	nb->stack_b->tab[0] = nb->stack_b->tab[1];
 	nb->stack_b->tab[1] = temp;
-	printf("sb\n");
 	nb->moves++;
 }
 
@@ -97,6 +93,5 @@ void	ft_ss(t_data *nb)
 	nb->stack_a->tab[1] = tempa;
 	nb->stack_b->tab[0] = nb->stack_b->tab[1];
 	nb->stack_b->tab[1] = tempb;
-	printf("ss\n");
 	nb->moves++;
 }

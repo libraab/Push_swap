@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_checker_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/10 12:12:30 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/19 16:44:27 by abouhlel         ###   ########.fr       */
+/*   Created: 2021/10/19 17:04:02 by abouhlel          #+#    #+#             */
+/*   Updated: 2021/10/19 17:04:19 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/push_swap.h"
+#include "./header/push_swap.h"
 
 int	ft_solve_2(t_data *nb)
 {
@@ -61,21 +61,4 @@ int	ft_many_arg(t_data *nb, char **argv)
 	}
 	ft_parsing2(nb, argv);
 	return (1);
-}
-
-int	main(int argc, char **argv)
-{
-	t_data	*nb;
-
-	nb = malloc(sizeof (t_data));
-	if (argc < 2)
-		return (EXIT_SUCCESS);
-	if (argc == 2)
-		ft_str_arg(nb, argv[1]);
-	if (argc > 2)
-	{
-		nb->tot = argc - 1;
-		ft_many_arg(nb, argv);
-	}
-	ft_solve(nb);
 }
