@@ -6,7 +6,7 @@
 #    By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/13 09:31:21 by abouhlel          #+#    #+#              #
-#    Updated: 2021/10/19 17:45:18 by abouhlel         ###   ########.fr        #
+#    Updated: 2021/10/19 18:29:23 by abouhlel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,12 +84,13 @@ all:		${NAME}
 
 %.o: %.c	$(HEADERS)
 			@printf $(yellow)
-			@printf "Generating the objects... %-33.33s\r" $@
+			@printf "Generating push_swap objects... %-33.33s\r" $@
 			@$(CC) -c $(CFLAGS) -o $@ $<
 			@printf $(reset)
 
 bonus:		${OBJ_BONUS}
 			@printf $(blue)
+			@printf "Generating checker objects... %-33.33s\r" $@
 			@printf $(magenta)
 			$(MAKE_EXT) ./libft
 			@$(COMPIL_BONUS)
