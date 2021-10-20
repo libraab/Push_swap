@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 09:17:49 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/19 17:41:31 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/20 09:41:55 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	ft_sort(t_data *nb, int i)
 		ft_ra(nb);
 	else if (ft_strncmp(nb->action[i], "rb", 2) == 0)
 		ft_rb(nb);
+	else if (ft_strncmp(nb->action[i], "rrr", 3) == 0)
+		ft_rrr(nb);
 	else if (ft_strncmp(nb->action[i], "rra", 3) == 0)
 		ft_rra(nb);
 	else if (ft_strncmp(nb->action[i], "rrb", 3) == 0)
@@ -34,8 +36,6 @@ void	ft_sort(t_data *nb, int i)
 		ft_rr(nb);
 	else if (ft_strncmp(nb->action[i], "ss", 2) == 0)
 		ft_ss(nb);
-	else if (ft_strncmp(nb->action[i], "rrr", 3) == 0)
-		ft_rrr(nb);
 }
 
 int	ft_get_output(t_data *nb)
