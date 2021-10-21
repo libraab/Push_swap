@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:31:49 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/21 15:17:21 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/21 15:39:26 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct s_data
 }			t_data;
 
 /////// * A C T I O N S * /////////////
+
 void	ft_pa(t_data *nb);
 void	ft_pb(t_data *nb);
 void	ft_sa(t_data *nb);
@@ -59,13 +60,17 @@ void	ft_rr(t_data *nb);
 void	ft_rra(t_data *nb);
 void	ft_rrb(t_data *nb);
 void	ft_rrr(t_data *nb);
+
 ////// * M E E T I N G * ////////////////////////
+
 int		ft_topbot(t_data *nb, int nbr);
 void	ft_top_top(t_data *nb, int nbr);
 void	ft_bot_bot(t_data *nb, int nbr);
 void	ft_bot_top(t_data *nb, int nbr);
 void	ft_top_bot(t_data *nb, int nbr);
+
 ///////// * P A R S I N G * ///////////////////////
+
 int		ft_parsing(t_data *nb, char *str);
 int		ft_parsing2(t_data *nb, char **str);
 int		ft_error(void);
@@ -82,7 +87,9 @@ bool	ft_valid_nbrs2(char *str);
 int		ft_many_arg(t_data *nb, char **argv);
 int		ft_str_arg(t_data *nb, char *argv);
 int		ft_arg_count(char *str, char sp);
+
 //////// * T H E _ C O R E * ///////////////////////////
+
 int		ft_search_next_a(t_data *nb, int nbr);
 int		ft_search_next_b(t_data *nb, int nbr);
 int		ft_real_index_a(t_data *nb, int nbr);
@@ -98,7 +105,9 @@ int		ft_swing(t_data *nb);
 int		ft_big_algo(t_data *nb);
 void	free_car_je_leaks(t_data *nb);
 void	init_list(t_data *nb);
+
 //////// * C H E C K E R  _ F C T * /////////////////
+
 void	ft_free_mychecker(t_data *nb);
 int		ft_sort(t_data *nb, int i);
 int		ft_get_output(t_data *nb, int i);

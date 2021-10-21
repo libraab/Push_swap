@@ -6,7 +6,7 @@
 #    By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/13 09:31:21 by abouhlel          #+#    #+#              #
-#    Updated: 2021/10/21 14:03:25 by abouhlel         ###   ########.fr        #
+#    Updated: 2021/10/21 15:47:02 by abouhlel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,9 @@ CHK_FOLDER			= mychecker/
 HEADER_FILE 		= push_swap.h
 
 SRCS				= 	ft_valid_arg.c \
+						ft_big_algo.c \
 						ft_utils_a.c \
 						ft_utils_b.c \
-						ft_big_algo.c \
-						ft_errors.c \
 						ft_parsing.c \
 						ft_search.c \
 						ft_solve.c \

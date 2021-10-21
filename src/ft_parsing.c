@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 09:30:26 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/21 11:20:24 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/21 15:46:14 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,10 @@ int	ft_parsing2(t_data *nb, char **str)
 	if (ft_check_ifsorted(nb, nb->tot))
 		exit(EXIT_SUCCESS);
 	return (1);
+}
+
+int	ft_error(void)
+{
+	write(2, "Error\n", 6);
+	exit(EXIT_FAILURE);
 }

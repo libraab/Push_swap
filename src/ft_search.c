@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 19:25:55 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/19 14:01:44 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/21 15:45:51 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,18 @@ int	ft_search_next_b(t_data *nb, int nbr)
 		i++;
 	}
 	return (next);
+}
+
+int	ft_all_sorted(t_data *nb)
+{
+	int	i;
+
+	i = 0;
+	while (i + 1 < nb->tot)
+	{
+		if (nb->stack_a->tab[i] > nb->stack_a->tab[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
 }

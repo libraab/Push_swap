@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:18:39 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/21 12:20:40 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/21 15:44:56 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,36 @@ int	ft_solve_3(t_data *nb)
 		&& nb->stack_a->tab[1] == ft_search_min(nb))
 		ft_sa(nb);
 	return (1);
+}
+
+void	free_car_je_leaks(t_data *nb)
+{
+	int	i;
+
+	i = 0;
+	free(nb->stack_a->tab);
+	free(nb->stack_b->tab);
+	free(nb->stack_a);
+	free(nb->stack_b);
+	free(nb->initial_tab);
+	if (nb->set != NULL)
+	{
+		while (nb->set[i])
+		{
+			free(nb->set[i]);
+			i++;
+		}
+		free(nb->set);
+	}
+	free(nb);
+}
+
+void	init_list(t_data *nb)
+{
+	nb->initial_tab = NULL;
+	nb->set = NULL;
+	nb->stack_a = NULL;
+	nb->stack_b = NULL;
 }
 
 void	ft_transfert(t_data *nb)
