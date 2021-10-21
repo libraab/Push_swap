@@ -1,49 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*   ft_utils_b.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 14:23:58 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/19 14:40:06 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/21 12:10:31 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
-
-int	ft_index_a(t_data *nb, int nbr)
-{
-	int	i;
-
-	i = 0;
-	while (i < nb->stack_a->count)
-	{
-		if (nb->stack_a->tab[i] == nbr)
-		{
-			if (i <= nb->stack_a->count / 2)
-				return (i);
-			else
-				return (nb->stack_a->count - i);
-		}
-		i++;
-	}
-	return (0);
-}
-
-int	ft_real_index_a(t_data *nb, int nbr)
-{
-	int	i;
-
-	i = 0;
-	while (i < nb->stack_a->count)
-	{
-		if (nb->stack_a->tab[i] == nbr)
-			return (i);
-		i++;
-	}
-	return (0);
-}
 
 int	ft_index_b(t_data *nb, int nbr)
 {
@@ -78,7 +45,7 @@ int	ft_real_index_b(t_data *nb, int nbr)
 	return (0);
 }
 
-int	ft_best_mv(t_data *nb)
+int	ft_best_option_b(t_data *nb)
 {
 	int	i;
 	int	count_mv;

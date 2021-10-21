@@ -6,11 +6,37 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:18:39 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/19 14:19:51 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/21 12:20:40 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
+
+int	ft_solve_3(t_data *nb)
+{
+	if (nb->stack_a->tab[0] == ft_search_max(nb)
+		&& nb->stack_a->tab[2] == ft_search_min(nb))
+	{
+		ft_ra(nb);
+		ft_sa(nb);
+	}
+	if (nb->stack_a->tab[0] == ft_search_max(nb)
+		&& nb->stack_a->tab[1] == ft_search_min(nb))
+		ft_ra(nb);
+	if (nb->stack_a->tab[0] == ft_search_min(nb)
+		&& nb->stack_a->tab[1] == ft_search_max(nb))
+	{
+		ft_sa(nb);
+		ft_ra(nb);
+	}
+	if (nb->stack_a->tab[1] == ft_search_max(nb)
+		&& nb->stack_a->tab[2] == ft_search_min(nb))
+		ft_rra(nb);
+	if (nb->stack_a->tab[2] == ft_search_max(nb)
+		&& nb->stack_a->tab[1] == ft_search_min(nb))
+		ft_sa(nb);
+	return (1);
+}
 
 void	ft_transfert(t_data *nb)
 {
@@ -27,38 +53,6 @@ void	ft_transfert(t_data *nb)
 		nb->stack_a->tab[i] = nb->initial_tab[i];
 		i++;
 	}
-}
-
-bool	number_under_exist(t_data *nb)
-{
-	int		i;
-	bool	t;
-
-	i = 0;
-	t = false;
-	while (i < nb->stack_a->count)
-	{
-		if (nb->stack_a->tab[i] < nb->med)
-			t = true;
-		i++;
-	}
-	return (t);
-}
-
-bool	number_upper_exist(t_data *nb)
-{
-	int		i;
-	bool	t;
-
-	i = 0;
-	t = false;
-	while (i < nb->stack_a->count)
-	{
-		if (nb->stack_a->tab[i] > nb->med)
-			t = true;
-		i++;
-	}
-	return (t);
 }
 
 void	ft_solve(t_data *nb)

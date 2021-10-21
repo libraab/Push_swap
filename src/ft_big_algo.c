@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 08:44:30 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/19 18:34:16 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/21 12:11:47 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,6 @@ int	ft_push_a(t_data *nb)
 			ft_ra(nb);
 		else
 			ft_pb(nb);
-	}
-	return (1);
-}
-
-int	ft_swing(t_data *nb)
-{
-	while (nb->stack_a->tab[0] != ft_search_min(nb))
-	{
-		if (ft_real_index_a (nb, ft_search_min(nb)) > nb->stack_a->count / 2)
-			ft_rra(nb);
-		else
-			ft_ra(nb);
 	}
 	return (1);
 }
@@ -60,6 +48,18 @@ int	ft_topbot(t_data *nb, int nbr)
 	return (nbr);
 }
 
+int	ft_swing(t_data *nb)
+{
+	while (nb->stack_a->tab[0] != ft_search_min(nb))
+	{
+		if (ft_real_index_a (nb, ft_search_min(nb)) > nb->stack_a->count / 2)
+			ft_rra(nb);
+		else
+			ft_ra(nb);
+	}
+	return (1);
+}
+
 int	ft_big_algo(t_data *nb)
 {
 	int	nbr;
@@ -69,7 +69,7 @@ int	ft_big_algo(t_data *nb)
 	ft_push_a(nb);
 	while (nb->stack_a->count > 1 && nb->stack_b->count > 0)
 	{
-		nbr = ft_best_mv(nb);
+		nbr = ft_best_option_b(nb);
 		while ((nb->stack_b->tab[0] != nbr)
 			|| nb->stack_a->tab[0] != ft_search_next_b(nb, nbr))
 			ft_topbot(nb, nbr);

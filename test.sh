@@ -1,18 +1,24 @@
-make re && ARG=`ruby -e "puts ($1..$2).to_a.shuffle.join(' ')"`; ./push_swap  $ARG
+ARG=`ruby -e "puts ($1..$2).to_a.shuffle.join(' ')"`; ./push_swap $ARG
 
-#MAX FOR 500 - 11500
-#MAX FOR 100 - 1100
-#MAX FOR 5   - 12
+#MAX FOR 500 ---> 11500
+#MAX FOR 100 ---> 1100
+#MAX FOR 5   ---> 12
+#MAX FOR 3   ---> 3
 
+######################### * C O M M A N D * ################################
 
-#test en printant tout les mouvements
 #./test.sh 1 500 
-#renvoit le nombre de mouvement
 #./test.sh 1 500 | wc -l  
 
+######################### * V I S U A L I Z E R * ##########################
 
-# visualiser command : python3 pyviz.py `ruby -e "puts (-200..200).to_a.shuffle.join(' ')"`  
-# tester moyenne command : 
+# put the executable in the folder 
+# ----> python3 pyviz.py `ruby -e "puts (-200..200).to_a.shuffle.join(' ')"`  
+
+############################# * T E S T E R * ###############################
+
+# rename Checker_Mac to checker & give it ALL the POWERS !!!!
+# ----> ./terter.sh .. 500 100     // that means 100 tests with lists of 500
 
 
 

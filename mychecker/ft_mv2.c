@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_reverse_rotate.c                                :+:      :+:    :+:   */
+/*   ft_mv2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 08:55:54 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/19 09:24:01 by abouhlel         ###   ########.fr       */
+/*   Created: 2021/10/19 16:48:36 by abouhlel          #+#    #+#             */
+/*   Updated: 2021/10/21 14:08:06 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	ft_rra(t_data *nb)
 		i--;
 	}
 	nb->stack_a->tab[0] = temp;
-	printf("rra\n");
 	nb->moves++;
 }
 
@@ -44,7 +43,6 @@ void	ft_rrb(t_data *nb)
 		i--;
 	}
 	nb->stack_b->tab[0] = temp;
-	printf("rrb\n");
 	nb->moves++;
 }
 
@@ -70,6 +68,27 @@ void	ft_rrr(t_data *nb)
 		i--;
 	}
 	nb->stack_b->tab[0] = tempb;
-	printf("rrr\n");
+	nb->moves++;
+}
+
+void	ft_sa(t_data *nb)
+{
+	int	temp;
+
+	temp = nb->stack_a->tab[0];
+	nb->stack_a->tab[0] = nb->stack_a->tab[1];
+	nb->stack_a->tab[1] = temp;
+	printf("sa\n");
+	nb->moves++;
+}
+
+void	ft_sb(t_data *nb)
+{
+	int	temp;
+
+	temp = nb->stack_b->tab[0];
+	nb->stack_b->tab[0] = nb->stack_b->tab[1];
+	nb->stack_b->tab[1] = temp;
+	printf("sb\n");
 	nb->moves++;
 }

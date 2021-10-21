@@ -6,11 +6,11 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 17:04:02 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/19 17:04:19 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/21 10:31:41 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./header/push_swap.h"
+#include "../header/push_swap.h"
 
 int	ft_solve_2(t_data *nb)
 {

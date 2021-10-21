@@ -6,13 +6,13 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 09:17:49 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/20 09:41:55 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/21 15:17:33 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./header/push_swap.h"
+#include "../header/push_swap.h"
 
-void	ft_sort(t_data *nb, int i)
+int	ft_sort(t_data *nb, int i)
 {
 	if (ft_strncmp(nb->action[i], "pa", 2) == 0)
 		ft_pa(nb);
@@ -34,13 +34,42 @@ void	ft_sort(t_data *nb, int i)
 		ft_rrb(nb);
 	else if (ft_strncmp(nb->action[i], "rr", 2) == 0)
 		ft_rr(nb);
-	else if (ft_strncmp(nb->action[i], "ss", 2) == 0)
-		ft_ss(nb);
+	else
+		return (0);
+	return (1);
 }
 
-int	ft_get_output(t_data *nb)
+void	ft_free_mychecker(t_data *nb)
 {
-	int		i;
+	int	i;
+
+	i = 0;
+	free (nb->stack_a);
+	free (nb->stack_b);
+	if (nb->action != NULL)
+	{
+		while (nb->action[i])
+		{
+			free(nb->action[i]);
+			i++;
+		}
+		free(nb->action);
+	}
+	i = 0;
+	if (nb->set != NULL)
+	{
+		while (nb->set[i])
+		{
+			free(nb->set[i]);
+			i++;
+		}
+		free(nb->set);
+	}
+	free (nb);
+}
+
+int	ft_get_output(t_data *nb, int i)
+{
 	int		count;
 	char	*line;
 
@@ -58,7 +87,11 @@ int	ft_get_output(t_data *nb)
 	i = 0;
 	while (i < count)
 	{
-		ft_sort(nb, i);
+		if (!ft_sort(nb, i))
+		{
+			write(1, "Error\n", 6);
+			exit(EXIT_FAILURE);
+		}
 		i++;
 	}
 	return (1);
@@ -81,10 +114,14 @@ int	main(int argc, char **argv)
 	nb->stack_a = malloc(sizeof(t_stack));
 	nb->stack_b = malloc(sizeof(t_stack));
 	ft_transfert(nb);
-	ft_get_output(nb);
+	ft_get_output(nb, 0);
 	if (ft_all_sorted(nb) == 1)
 		write (1, "OK\n", 3);
 	else
 		write (1, "KO\n", 3);
+	free (nb->stack_a->tab);
+	free (nb->stack_b->tab);
+	free (nb->initial_tab);
+	ft_free_mychecker(nb);
 	return (0);
 }

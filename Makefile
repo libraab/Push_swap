@@ -6,51 +6,51 @@
 #    By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/13 09:31:21 by abouhlel          #+#    #+#              #
-#    Updated: 2021/10/19 18:29:23 by abouhlel         ###   ########.fr        #
+#    Updated: 2021/10/21 14:03:25 by abouhlel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME				= push_swap
 NAME_CHK			= checker
-#	FILES			############################################################
+############################ * F I L E S * #####################################
 FOLDER_HEADER		= header/
 FOLDER				= src/
+CHK_FOLDER			= mychecker/
 
 HEADER_FILE 		= push_swap.h
 
-SRCS				= 	ft_sort_3.c \
+SRCS				= 	ft_valid_arg.c \
+						ft_utils_a.c \
+						ft_utils_b.c \
 						ft_big_algo.c \
 						ft_errors.c \
 						ft_parsing.c \
 						ft_search.c \
 						ft_solve.c \
-						ft_valid_arg.c \
-						ft_utils.c \
 						ft_meet.c \
 						
-MAIN				=	ft_reverse_rotate.c \
-						ft_rotate.c \
-						ft_move.c \
+MAIN				=	ft_move.c \
+						ft_move2.c \
 						main.c \
 						
 BONUS				= 	Checker.c \
 						ft_mv.c \
-						ft_rr.c \
-						ft_rrr.c \
-						ft_checker_utils.c \
+						ft_mv2.c \
+						ft_utils.c \
 
 HEADERS				= $(addprefix ${FOLDER_HEADER},${HEADER_FILE})												
 SRC					= $(addprefix ${FOLDER},${SRCS})
 MN					= $(addprefix ${FOLDER},${MAIN})
+CHK					= $(addprefix ${CHK_FOLDER},${BONUS})
 
 OBJS				= ${SRC:.c=.o}
 OBJ_MN				= ${MN:.c=.o}
-OBJ_CHK				= ${BONUS:.c=.o}
+OBJ_CHK				= ${CHK:.c=.o}
 ####################################################################################
 
-#	COMPILATION		################################################################
+######################### * C O M P I L A T I O N * ##############################
 CC					= gcc
-CFLAGS  			= -Wall -Wextra -Werror
+CFLAGS  			= -Wall -Wextra -Werror -g 
 RM					= rm -rf
 MAKE_EXT			= @make -s --no-print-directory -C
 
@@ -71,7 +71,7 @@ COMPIL_BONUS	= $(CC) $(CFLAGS) ${OBJ_BONUS} $(LIBS) -o $(NAME_CHK)
 
 #####################################################################################
 
-#	RULES	#########################################################################
+################################# * R U L E S * #####################################
 $(NAME):	${OBJ}
 			@printf $(blue)
 			@printf "\n"
@@ -115,7 +115,7 @@ fclean:		clean
 .PHONY: 	all clean fclean re bonus
 #################################################################################
 
-#	COLOR SETTING	#############################################################
+############################### * C O L O R S * #################################
 black 				=	"[1;30m"
 red 				=	"[1;31m"
 green 				=	"[1;32m"
