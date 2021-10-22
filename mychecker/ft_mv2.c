@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 16:48:36 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/21 14:08:06 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/21 17:39:18 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ void	ft_sa(t_data *nb)
 	temp = nb->stack_a->tab[0];
 	nb->stack_a->tab[0] = nb->stack_a->tab[1];
 	nb->stack_a->tab[1] = temp;
-	printf("sa\n");
 	nb->moves++;
 }
 
@@ -89,6 +88,5 @@ void	ft_sb(t_data *nb)
 	temp = nb->stack_b->tab[0];
 	nb->stack_b->tab[0] = nb->stack_b->tab[1];
 	nb->stack_b->tab[1] = temp;
-	printf("sb\n");
 	nb->moves++;
 }
