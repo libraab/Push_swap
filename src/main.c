@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 12:12:30 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/25 08:53:38 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/25 10:33:05 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	main(int argc, char **argv)
 	init_list(nb);
 	if (argc < 2)
 	{
-		free_car_je_leaks(nb);
+		free (nb);
 		return (EXIT_SUCCESS);
 	}
 	if (argc == 2)

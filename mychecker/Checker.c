@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 09:17:49 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/21 17:44:04 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/25 10:34:33 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ int	ft_sort(t_data *nb, int i)
 void	ft_ss(t_data *nb)
 {
 	int	tempa;
-	int tempb;
-	
+	int	tempb;
+
 	tempa = nb->stack_a->tab[0];
 	tempb = nb->stack_b->tab[0];
 	nb->stack_a->tab[0] = nb->stack_a->tab[1];
