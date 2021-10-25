@@ -6,7 +6,7 @@
 /*   By: abouhlel <abouhlel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 12:12:30 by abouhlel          #+#    #+#             */
-/*   Updated: 2021/10/21 11:31:02 by abouhlel         ###   ########.fr       */
+/*   Updated: 2021/10/25 08:53:38 by abouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,6 @@ int	main(int argc, char **argv)
 		ft_many_arg(nb, argv);
 	}
 	ft_solve(nb);
+	free_car_je_leaks(nb);
 	return (0);
 }
