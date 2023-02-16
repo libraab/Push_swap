@@ -5,8 +5,11 @@ RUN THE PROGRAM
 - ./push_swap <list of nbrs>
 
 Max for a list of 500   ---> 11500
+  
 Max for a list of 100   ---> 1100
+  
 Max for a list of 5     ---> 12
+
 Max for a list of 3     ---> 3
 
 RUN THE TEST
