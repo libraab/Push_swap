@@ -15,7 +15,7 @@ RUN THE TEST
 
 RUN THE VISUALISER
 - put the executable in the folder first
-- ```python3 pyviz.py \`ruby -e "puts (-200..200).to_a.shuffle.join(' ')"\````  
+- ```python3 pyviz.py \`ruby -e "puts (-200..200).to_a.shuffle.join(' ')"\` ```  
 
 RUN THE TESTER
 - rename Checker_Mac to checker & give it ALL the POWERS !!!!
