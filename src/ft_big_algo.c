@@ -63,9 +63,7 @@ int	ft_swing(t_data *nb)
 int	ft_big_algo(t_data *nb)
 {
 	int	nbr;
-	int	i;
-
-	i = 0;
+	
 	ft_push_a(nb);
 	while (nb->stack_a->count > 1 && nb->stack_b->count > 0)
 	{

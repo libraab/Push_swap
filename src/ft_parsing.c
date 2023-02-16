@@ -36,10 +36,8 @@ int	ft_parsing(t_data *nb, char *str)
 int	ft_parsing2(t_data *nb, char **str)
 {
 	int		i;
-	int		j;
 
 	i = 0;
-	j = 0;
 	nb->initial_tab = malloc(sizeof(int) * nb->tot);
 	while (str[i + 1])
 	{

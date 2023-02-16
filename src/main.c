@@ -36,9 +36,6 @@ int	ft_arg_count(char *str, char sp)
 
 int	ft_str_arg(t_data *nb, char *argv)
 {
-	int	i;
-
-	i = 0;
 	nb->tot = ft_arg_count(argv, ' ');
 	if (ft_valid_nbrs(argv) == false)
 		return (ft_error());
